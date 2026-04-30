@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { BookConsultationButton } from "@/components/BookConsultationButton";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
@@ -64,12 +65,9 @@ export default async function StudyAbroadGuidePage({ params }: Props) {
           </ul>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <Link
-              href="/#contact"
-              className="focus-ring btn-primary-premium inline-flex justify-center rounded-xl px-8 py-3.5 text-center text-sm font-semibold"
-            >
+            <BookConsultationButton className="focus-ring btn-primary-premium inline-flex justify-center rounded-xl px-8 py-3.5 text-center text-sm font-semibold">
               Book a study abroad consultation
-            </Link>
+            </BookConsultationButton>
             <Link
               href="/#destinations"
               className="focus-ring inline-flex justify-center rounded-xl border border-[var(--border)] bg-[var(--surface-soft)] px-8 py-3.5 text-center text-sm font-semibold text-[var(--heading)] hover:bg-[var(--surface-soft)]/80"

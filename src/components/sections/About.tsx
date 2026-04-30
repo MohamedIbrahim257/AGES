@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { BookConsultationButton } from "@/components/BookConsultationButton";
 import { Compass, Globe2, ShieldCheck, Users } from "lucide-react";
 import { ACCENT, aboutSeoCopy } from "@/data/content";
 
@@ -109,12 +109,9 @@ export function About() {
               ))}
             </div>
 
-            <Link
-              href="#contact"
-              className="focus-ring btn-primary-premium mt-10 inline-flex rounded-xl px-8 py-3.5 text-sm font-semibold"
-            >
+            <BookConsultationButton className="focus-ring btn-primary-premium mt-10 inline-flex rounded-xl px-8 py-3.5 text-sm font-semibold">
               Start Your Journey
-            </Link>
+            </BookConsultationButton>
           </div>
         </div>
       </div>

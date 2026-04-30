@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { BookConsultationButton } from "@/components/BookConsultationButton";
 import { SITE } from "@/lib/site";
 
 const nav = [
@@ -59,12 +60,9 @@ export function Header() {
           ))}
         </nav>
         <div className="hidden md:block">
-          <a
-            href="#contact"
-            className="focus-ring btn-primary-premium inline-flex rounded-full px-6 py-2.5 text-[13px] font-semibold shadow-lg hover:-translate-y-px"
-          >
+          <BookConsultationButton className="focus-ring btn-primary-premium inline-flex rounded-full px-6 py-2.5 text-[13px] font-semibold shadow-lg hover:-translate-y-px">
             Book consultation
-          </a>
+          </BookConsultationButton>
         </div>
         <button
           type="button"

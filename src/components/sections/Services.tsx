@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { BookConsultationButton } from "@/components/BookConsultationButton";
 import {
   Backpack,
   FileCheck,
@@ -75,12 +75,9 @@ export function Services() {
                 Book a free consultation — we&apos;ll map programmes, timelines, and documentation with no obligation.
               </p>
             </div>
-            <Link
-              href="#contact"
-              className="focus-ring mt-8 inline-flex justify-center rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-[var(--heading)] transition hover:bg-[var(--surface-soft)]"
-            >
+            <BookConsultationButton className="focus-ring mt-8 inline-flex w-full justify-center rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-[var(--heading)] transition hover:bg-[var(--surface-soft)]">
               Book Free Consultation
-            </Link>
+            </BookConsultationButton>
           </article>
         </div>
       </div>

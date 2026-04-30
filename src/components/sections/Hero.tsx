@@ -4,9 +4,9 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import Link from "next/link";
 import { useRef } from "react";
 import { ArrowRight, Award, BookOpen, ChevronDown, Globe2 } from "lucide-react";
+import { BookConsultationButton } from "@/components/BookConsultationButton";
 import { SITE, whatsappHref } from "@/lib/site";
 import { heroSeoCopy } from "@/data/content";
 import { prefersReducedMotion } from "@/lib/motion";
@@ -254,10 +254,10 @@ export function Hero() {
             </p>
 
             <div data-hero-actions className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Link href="#contact" className="focus-ring btn-primary-premium inline-flex items-center justify-center gap-2 px-8 py-3.5 text-sm hover:-translate-y-0.5">
+              <BookConsultationButton className="focus-ring btn-primary-premium inline-flex items-center justify-center gap-2 px-8 py-3.5 text-sm hover:-translate-y-0.5">
                 Book Free Consultation
                 <ArrowRight className="h-4 w-4" aria-hidden />
-              </Link>
+              </BookConsultationButton>
             </div>
 
             <a
