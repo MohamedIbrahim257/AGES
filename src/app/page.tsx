@@ -6,8 +6,9 @@ import { PageMotion } from "@/components/motion/PageMotion";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { MissionVision } from "@/components/sections/MissionVision";
-import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
+import { StudentJourney } from "@/components/sections/StudentJourney";
 import { Services } from "@/components/sections/Services";
+import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { Destinations } from "@/components/sections/Destinations";
 import { EventsNews } from "@/components/sections/EventsNews";
 import { CtaBanner } from "@/components/sections/CtaBanner";
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     absolute: `Study Abroad Dubai & UAE | ${SITE.name} — International Education Agency`,
   },
   description:
-    "Study abroad from Dubai with ICEF-accredited consultants: university admissions, student visa support, scholarships for international students, and global destinations including UK, USA, Canada & Europe.",
+    "AGES Global Dubai — your trusted agency for international study. University admissions, student visas, and scholarships across the UK, USA, Canada, Germany, and Europe.",
   alternates: {
     canonical: SITE.url,
   },
@@ -36,7 +37,7 @@ const jsonLd = {
       "@id": `${SITE.url}/#organization`,
       name: SITE.name,
       description:
-        "International education agency in Dubai offering study abroad counselling, university admissions, student visa support, and scholarships guidance for UAE students.",
+        "AGES Global Dubai — international education agency offering study abroad counselling, university admissions, student visa support, and scholarships guidance.",
       url: SITE.url,
       telephone: SITE.phoneTel,
       email: SITE.email,
@@ -74,8 +75,9 @@ export default function HomePage() {
         {/* Sections alternate: white → band after Hero — keep order in sync */}
         <About />
         <MissionVision />
-        <WhyChooseUs />
+        <StudentJourney />
         <Services />
+        <WhyChooseUs />
         <Destinations />
         <EventsNews />
         <CtaBanner />

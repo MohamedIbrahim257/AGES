@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { ArrowRight, Globe, MapPin } from "lucide-react";
-import { type RegionFilter, destinations } from "@/data/content";
+import { type RegionFilter, destinations, destinationsSectionCopy } from "@/data/content";
 import { studyAbroadPages } from "@/data/studyAbroadPages";
 
 const regionFilters: { id: RegionFilter; label: string }[] = [
@@ -27,14 +27,8 @@ export function Destinations() {
     <section id="destinations" data-animate="section" className="section-shell-white">
       <div className="section-padding">
         <div className="section-intro mx-auto max-w-3xl">
-          <div className="flex justify-center">
-            <span className="eyebrow">Study abroad</span>
-          </div>
-          <h2 className="section-heading">Global Destinations</h2>
-          <p className="section-lead">
-            Study abroad support across top destinations — university admissions, student visa guidance, and scholarships
-            awareness tailored to each country.
-          </p>
+          <h2 className="section-heading !mt-0">{destinationsSectionCopy.title}</h2>
+          <p className="section-lead">{destinationsSectionCopy.lead}</p>
         </div>
 
         {/* Banner */}
@@ -58,14 +52,13 @@ export function Destinations() {
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 ring-1 ring-white/15 backdrop-blur-sm">
                   <MapPin className="h-4 w-4 text-sky-200" aria-hidden />
                 </span>
-                Our reach
+                {destinationsSectionCopy.bannerEyebrow}
               </p>
               <p className="mt-4 font-display text-[1.65rem] font-semibold leading-[1.15] tracking-tight text-white sm:text-3xl md:text-[2rem]">
-                30+ countries worldwide
+                {destinationsSectionCopy.bannerTitle}
               </p>
               <p className="mt-3 max-w-md text-[15px] leading-relaxed text-white/82 md:text-base">
-                From the Americas to Asia, Europe to the Middle East — counselling aligned to local admissions and visa
-                norms.
+                {destinationsSectionCopy.bannerBody}
               </p>
             </div>
           </div>

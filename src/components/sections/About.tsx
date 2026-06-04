@@ -1,28 +1,28 @@
 import Image from "next/image";
 import { BookConsultationButton } from "@/components/BookConsultationButton";
-import { Compass, Globe2, ShieldCheck, Users } from "lucide-react";
+import { Award, Compass, Globe2, ShieldCheck } from "lucide-react";
 import { ACCENT, aboutSeoCopy } from "@/data/content";
 
 const features = [
   {
     icon: ShieldCheck,
     title: "ICEF Accredited",
-    subtitle: "Internationally recognized standards",
+    subtitle: "Internationally recognized education agency standards",
   },
   {
-    icon: Users,
-    title: "Expert Advisors",
-    subtitle: "Seasoned counsellors across admissions & visas",
+    icon: Award,
+    title: "Accreditation",
+    subtitle: "Recognized by leading international organizations",
   },
   {
     icon: Globe2,
-    title: "Global Network",
-    subtitle: "150+ university partnerships worldwide",
+    title: "30+ Countries",
+    subtitle: "Structured guidance across global destinations",
   },
   {
     icon: Compass,
-    title: "Personalized Guidance",
-    subtitle: "Roadmaps aligned to your goals",
+    title: "Personalized Approach",
+    subtitle: "Ethical counselling focused on long-term success",
   },
 ];
 
@@ -46,7 +46,7 @@ export function About() {
               <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] bg-slate-200 shadow-[var(--shadow-soft)] ring-[3px] ring-white lg:aspect-[3/4]">
                 <Image
                   src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1920&q=88"
-                  alt="Study abroad counselling session — university admissions planning from Dubai"
+                  alt="Students preparing for international study abroad with AGES Global Dubai"
                   fill
                   className="object-cover object-[center_45%]"
                   sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 50vw, 640px"
@@ -58,32 +58,18 @@ export function About() {
           </div>
 
           <div className="relative min-w-0 pt-6 lg:pt-0 lg:pb-4">
-            <div className="flex justify-start">
-              <span className="eyebrow">{aboutSeoCopy.eyebrow}</span>
-            </div>
-
-            <div className="relative mt-5">
+            <div className="relative">
               <div className="absolute -left-4 top-2 hidden h-[calc(100%-0.5rem)] w-1 rounded-full bg-gradient-to-b from-[var(--accent-mid)] via-[var(--accent-mid)]/40 to-transparent lg:block" />
               <h2 className="text-3xl font-semibold tracking-tight text-[var(--heading)] md:text-[2.15rem] md:leading-tight">
                 {aboutSeoCopy.title}
               </h2>
             </div>
 
-            <p className="mt-5 text-lg font-medium leading-snug text-[var(--heading)]">
-              {aboutSeoCopy.introHighlight}
-            </p>
-
-            <ul className="mt-3 grid gap-2 text-sm font-medium text-[var(--body-muted)] sm:grid-cols-2">
-              {aboutSeoCopy.supportBullets.map((line) => (
-                <li key={line} className="flex items-start gap-2">
-                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[var(--accent-mid)]" aria-hidden />
-                  <span>{line}</span>
-                </li>
-              ))}
-            </ul>
-
             {aboutSeoCopy.paragraphs.map((p, i) => (
-              <p key={i} className="mt-5 text-base leading-relaxed text-[var(--body-muted)] md:text-[17px]">
+              <p
+                key={i}
+                className={`leading-relaxed text-[var(--body-muted)] md:text-[17px] ${i === 0 ? "mt-5 text-lg font-medium text-[var(--heading)]" : "mt-5 text-base"}`}
+              >
                 {p}
               </p>
             ))}
@@ -110,7 +96,7 @@ export function About() {
             </div>
 
             <BookConsultationButton className="focus-ring btn-primary-premium mt-10 inline-flex rounded-xl px-8 py-3.5 text-sm font-semibold">
-              Start Your Journey
+              Book a consultation
             </BookConsultationButton>
           </div>
         </div>

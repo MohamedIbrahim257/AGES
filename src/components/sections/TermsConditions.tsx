@@ -8,10 +8,7 @@ export function TermsConditions() {
           <div className="overflow-hidden rounded-[1.75rem] border border-[rgba(6,21,38,0.08)] bg-[var(--surface)] shadow-[var(--shadow-soft)] ring-1 ring-[rgba(6,21,38,0.04)]">
             <header className="border-b border-[var(--border)] bg-gradient-to-b from-[var(--surface-soft)]/50 to-transparent px-5 py-5 text-center sm:px-8 md:px-9 md:py-6">
               <div className="mx-auto mb-2 h-px w-10 rounded-full bg-gradient-to-r from-transparent via-[var(--accent-mid)] to-transparent opacity-80" aria-hidden />
-              <div className="flex justify-center">
-                <span className="eyebrow">Legal</span>
-              </div>
-              <h2 className="section-heading !mt-2">Terms &amp; Conditions</h2>
+              <h2 className="section-heading !mt-0">Terms &amp; Conditions</h2>
               <p className="section-lead-tight mx-auto max-w-xl">{termsConditions.subtitle}</p>
             </header>
 

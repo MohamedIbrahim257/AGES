@@ -18,8 +18,8 @@ export function Footer() {
         <div>
           <p className="font-display text-lg font-semibold tracking-tight text-white">{SITE.name}</p>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-400">
-            International education consultancy in Dubai — admissions, visa guidance, and scholarships with transparent,
-            student-first support.
+            Your trusted agency for international study opportunities — university admissions, student visas, and
+            scholarships with expert, ethical guidance.
           </p>
         </div>
         <div>

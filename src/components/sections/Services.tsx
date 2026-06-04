@@ -3,22 +3,13 @@ import {
   Backpack,
   FileCheck,
   GraduationCap,
-  MessagesSquare,
   PlaneLanding,
   School,
   Wallet,
 } from "lucide-react";
-import { services } from "@/data/content";
+import { services, servicesSectionCopy } from "@/data/content";
 
-const serviceIcons = [
-  GraduationCap,
-  School,
-  FileCheck,
-  MessagesSquare,
-  Wallet,
-  Backpack,
-  PlaneLanding,
-] as const;
+const serviceIcons = [GraduationCap, School, FileCheck, Wallet, Backpack, PlaneLanding] as const;
 
 const accentRing = {
   blue: "bg-[var(--accent-soft)] ring-[rgba(37,99,235,0.2)] text-[var(--accent-mid)]",
@@ -35,17 +26,11 @@ export function Services() {
     <section id="services" data-animate="section" className="section-shell-band">
       <div className="section-padding">
         <div className="section-intro">
-          <div className="flex justify-center">
-            <span className="eyebrow">International student services</span>
-          </div>
-          <h2 className="section-heading">Our Services</h2>
-          <p className="section-lead">
-            Complete study abroad services — university admissions, student visa assistance, scholarships for international
-            students, and arrival support under one Dubai consultancy team.
-          </p>
+          <h2 className="section-heading !mt-0">{servicesSectionCopy.title}</h2>
+          <p className="section-lead">{servicesSectionCopy.lead}</p>
         </div>
 
-        <div className="mx-auto mt-14 grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto mt-14 grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => {
             const Icon = serviceIcons[i];
             const n = String(i + 1);

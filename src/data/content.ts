@@ -6,76 +6,66 @@ export type RegionFilter = "all" | "Americas" | "Europe" | "Asia" | "Middle East
 
 export const whyCards = [
   {
-    key: "partnerships",
-    title: "Top university partnerships",
+    key: "excellence",
+    title: "Academic Excellence",
     description:
-      "We work with 150+ accredited universities across the UK, USA, Canada, and Europe — matched to your study abroad goals.",
+      "We partner with over 150 accredited universities, offering students a wide range of high-quality study options.",
     accent: "blue" as const,
   },
   {
-    key: "advisors",
-    title: "Expert study abroad advisors",
+    key: "engagement",
+    title: "Global Engagement",
     description:
-      "Personalised guidance from consultants who understand university admissions, student visa timelines, and scholarships for international students.",
+      "We stay connected with international institutions through regular events and ongoing collaboration.",
     accent: "purple" as const,
   },
   {
-    key: "success",
-    title: "Proven student success",
+    key: "expertise",
+    title: "Proven Expertise",
     description:
-      "Students trust us for structured planning — from shortlisting and applications to visa readiness and departure.",
+      "Our experienced team guides students toward the right academic choices and successful placements.",
     accent: "sky" as const,
   },
   {
     key: "trust",
-    title: "Trusted & accredited",
+    title: "Trusted & Accredited",
     description:
-      "ICEF-accredited international education agency in Dubai — ethical counselling and transparent expectations.",
+      "We are accredited by ICEF and recognized by leading international organizations, ensuring a reliable, transparent, and high-quality service for our students.",
     accent: "green" as const,
   },
 ];
 
 export const services = [
   {
-    title: "Study abroad counselling",
+    title: "Study Abroad Counselling",
     description:
-      "Profile review, destination advice, and a roadmap for studying abroad — aligned with admissions and visa timelines.",
+      "Profile evaluation, university selection, and destination advice aligned with your goals.",
     accent: "blue" as const,
   },
   {
-    title: "University application support",
+    title: "University Application Support",
     description:
-      "University admissions support across portals — documentation review, submission tracking, and interview readiness.",
+      "End-to-end support with applications, documentation, and interview preparation.",
     accent: "purple" as const,
   },
   {
-    title: "Student visa assistance",
-    description:
-      "Structured guidance for student visa applications and embassy preparation linked to your offer timeline.",
+    title: "Student Visa Assistance",
+    description: "Step-by-step guidance for successful student visa applications.",
     accent: "sky" as const,
   },
   {
-    title: "Embassy interview preparation",
-    description:
-      "Mock interviews and checklist-driven coaching where embassy appointments form part of your route abroad.",
-    accent: "pink" as const,
-  },
-  {
-    title: "Scholarships & financial advice",
-    description:
-      "Funding awareness for merit and institutional awards — packaged alongside realistic admissions strategy.",
+    title: "Scholarships & Financial Advice",
+    description: "Guidance on scholarships, funding options, and financial planning.",
     accent: "amber" as const,
   },
   {
-    title: "Pre-departure guidance",
-    description:
-      "Travel readiness, accommodation orientation, and essential checks before you leave the UAE.",
+    title: "Pre-Departure Support",
+    description: "Travel, accommodation, and readiness guidance before departure.",
     accent: "green" as const,
   },
   {
-    title: "Post-arrival support",
-    description:
-      "Continued orientation after arrival so you settle into your university and host country with clarity.",
+    title: "Post-Arrival Support",
+    description: "Ongoing assistance to help you settle into your new country and university.",
     accent: "rose" as const,
   },
 ];
@@ -94,15 +84,25 @@ export const destinations: Destination[] = [
   { country: "Germany", benefit: "Study in Germany · STEM & English-taught options", region: "Europe", flag: "🇩🇪" },
   { country: "Spain", benefit: "Study in Spain · Vibrant student cities", region: "Europe", flag: "🇪🇸" },
   { country: "Italy", benefit: "Study in Italy · Arts, design & business hubs", region: "Europe", flag: "🇮🇹" },
+  { country: "Cyprus", benefit: "Study in Cyprus · EU pathways & Mediterranean lifestyle", region: "Europe", flag: "🇨🇾" },
   { country: "Hungary", benefit: "Study in Hungary · Accessible EU education", region: "Europe", flag: "🇭🇺" },
   { country: "Poland", benefit: "Study in Poland · Central European hubs", region: "Europe", flag: "🇵🇱" },
   { country: "Romania", benefit: "Study in Romania · Growing English programmes", region: "Europe", flag: "🇷🇴" },
   { country: "South Korea", benefit: "Study in South Korea · Innovation-led campuses", region: "Asia", flag: "🇰🇷" },
   { country: "Turkey", benefit: "Study in Turkey · Bridge between continents", region: "Middle East", flag: "🇹🇷" },
-  { country: "UAE", benefit: "Study in UAE · Regional excellence hubs", region: "Middle East", flag: "🇦🇪" },
-  { country: "Cyprus", benefit: "Study in Cyprus · EU pathways & Mediterranean lifestyle", region: "Europe", flag: "🇨🇾" },
+  { country: "United Arab Emirates", benefit: "Study in UAE · Regional excellence hubs", region: "Middle East", flag: "🇦🇪" },
   { country: "Lithuania", benefit: "Study in Lithuania · Affordable EU degrees", region: "Europe", flag: "🇱🇹" },
 ];
+
+export const destinationsSectionCopy = {
+  eyebrow: "Global destinations",
+  title: "Global Destinations",
+  lead:
+    "We offer opportunities in top destinations and universities across the world. Our guidance is tailored to each country's admissions process and visa requirements.",
+  bannerEyebrow: "Find your perfect academic path",
+  bannerTitle: "Explore universities and programs across our global network",
+  bannerBody: "30+ countries — counselling aligned to local admissions and visa norms.",
+} as const;
 
 export type NewsItem = {
   image: string;
@@ -111,6 +111,12 @@ export type NewsItem = {
   title: string;
   excerpt: string;
 };
+
+export const eventsNewsCopy = {
+  eyebrow: "Events & news",
+  title: "Events & News",
+  lead: "Scholarship alerts, education fairs, and study destination insights.",
+} as const;
 
 export const newsItems: NewsItem[] = [
   {
@@ -132,7 +138,7 @@ export const newsItems: NewsItem[] = [
   {
     image:
       "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80",
-    category: "Study Guide",
+    category: "Study Destination Insights",
     date: "February 2026",
     title: "Visa readiness checklist",
     excerpt: "Documentation timelines and embassy preparation tips for popular study destinations.",
@@ -145,23 +151,30 @@ export const trustIndicators = [
   { label: "Accreditation", value: "ICEF Accredited" },
 ];
 
-export const eventCards = [
-  {
-    title: "Scholarships",
-    description:
-      "Stay informed about merit awards, institutional scholarships, and deadlines.",
-  },
-  {
-    title: "Education fairs",
-    description:
-      "Meet university representatives and explore programmes matched to your profile.",
-  },
-  {
-    title: "Study guides",
-    description:
-      "Practical guidance on applications, visas, and life abroad — curated by our team.",
-  },
-];
+export const studentJourneySteps = [
+  { key: "apply", label: "Apply" },
+  { key: "prepare", label: "Prepare" },
+  { key: "submit", label: "Submit" },
+  { key: "offer", label: "Get offer" },
+  { key: "visa", label: "Visa" },
+  { key: "fly", label: "Fly" },
+  { key: "arrive", label: "Arrive" },
+] as const;
+
+export const studentJourneyCopy = {
+  eyebrow: "Your journey",
+  title: "Student Journey Timeline",
+  lead: "From first application to arrival overseas — structured support at every stage.",
+  videoTitle: "Study abroad journey overview",
+} as const;
+
+/** Google Drive file — share: https://drive.google.com/file/d/10_ElIn3SFD1AcxVLL3Kbpbnkno0CPvNS/view */
+export const studentJourneyVideo = {
+  driveFileId: "10_ElIn3SFD1AcxVLL3Kbpbnkno0CPvNS",
+  embedUrl: "https://drive.google.com/file/d/10_ElIn3SFD1AcxVLL3Kbpbnkno0CPvNS/preview",
+  posterSrc: "/images/journey-video-poster.jpg",
+  posterAlt: "Students in a classroom planning their international study abroad journey",
+} as const;
 
 export type FaqItem = {
   question: string;
@@ -172,106 +185,136 @@ export type FaqItem = {
 
 export const faqSectionCopy = {
   eyebrow: "FAQ",
-  title: "Study abroad questions students ask first",
-  lead:
-    "University admissions, student visa support, scholarships for international students, and timelines — clear answers before you book your Dubai consultation.",
+  title: "Frequently Asked Questions",
+  lead: "Clear answers about destinations, applications, visas, scholarships, and how to get started with AGES.",
 } as const;
 
 export const faqItems: FaqItem[] = [
   {
-    question: "Which countries can I study abroad in with AGES Global?",
+    question: "Which countries can I study in through AGES?",
     answer:
-      "AGES Global offers study abroad pathways across 30+ countries including the UK, USA, Canada, Germany, Europe, and Asia — aligned with your academic goals.",
+      "AGES partners with leading universities across 30+ global destinations, offering study opportunities tailored to different academic goals and career paths.",
   },
   {
-    question: "How does AGES support students studying abroad?",
+    question: "How does AGES support students?",
     answer:
-      "We provide full international education agency support: university applications, student visa assistance, scholarships guidance, and pre-departure preparation.",
+      "We provide end-to-end guidance, including university selection, application processing, visa assistance, pre-departure preparation, and post-arrival support.",
   },
   {
-    question: "Do you charge for study abroad services?",
+    question: "Do you charge for your services?",
     answer:
-      "Yes — we offer flexible service packages depending on the level of counselling, admissions, and visa support you choose.",
+      "Yes. We offer flexible service packages — Basic, Standard, and Premium — allowing students to choose the level of support that suits their needs.",
   },
   {
     question: "How do you help me choose the right university?",
     answer:
-      "Our study abroad consultants assess your academic background, career goals, and budget to recommend best-fit universities and programmes.",
+      "Our expert advisors evaluate your academic profile, career objectives, and personal preferences to recommend the most suitable universities and programs.",
   },
   {
     question: "What are the basic requirements to study abroad?",
-    answer: "Requirements vary by country and programme; common expectations include:",
+    answer: "Although requirements vary by country, most applications require:",
     listItems: [
-      "Academic transcripts",
-      "English language tests (e.g. IELTS / TOEFL where applicable)",
-      "Valid passport",
+      "Academic Certificates & Transcripts",
+      "English Language Proficiency",
+      "Valid Passport",
     ],
-    answerSuffix: "We align documentation with your destination’s admissions and visa rules.",
+    answerSuffix: "Our team guides you through every step.",
   },
   {
-    question: "Do you provide student visa support?",
+    question: "Do you assist with visa applications?",
     answer:
-      "Yes — we deliver structured guidance for student visa applications and embassy preparation linked to your offer timeline.",
+      "Yes. We provide full visa support, including documentation review, application preparation, and compliance guidance to maximize approval success.",
   },
   {
-    question: "How long does the study abroad process take?",
+    question: "How long does the application process take?",
     answer:
-      "Timelines range from a few weeks to several months depending on destination and intake — earlier preparation protects admissions and visa windows.",
+      "The process typically takes a few weeks to several months, depending on the destination and intake period. Early preparation is highly recommended.",
   },
   {
-    question: "Can you help with scholarships for international students?",
+    question: "Can AGES help with scholarships?",
     answer:
-      "Yes — we assist students in identifying scholarships for international students and aligning documents with merit or institutional awards.",
+      "Yes. We identify available scholarship opportunities and assist eligible students throughout the application process.",
   },
   {
-    question: "When should I apply for study abroad?",
+    question: "When should I start applying?",
     answer:
-      "We recommend starting your study abroad application 6–12 months before your intake where possible — competitive programmes fill earlier.",
+      "We recommend starting your application 6–12 months before your intended intake to ensure sufficient preparation and processing time.",
   },
   {
-    question: "How do I get started with AGES Global Dubai?",
+    question: "How can I get started with AGES?",
     answer:
-      "Book a consultation with our study abroad advisors in Dubai — we’ll map programmes, university admissions steps, and student visa milestones.",
+      "Simply book a consultation session through our website to speak with one of our advisors and begin your international education journey.",
   },
 ];
 
-/** Homepage & pillar SEO — refine metrics with verified facts when publishing */
 export const heroSeoCopy = {
-  badgeLabel: "ICEF accredited · international education agency UAE",
-  titlePrimary: "Study abroad with confidence",
-  titleBrand: "AGES Global Dubai",
-  subtitleBold: "Your trusted international education agency in Dubai.",
+  badgeLabel: "ICEF Accredited · International Education Agency",
+  titlePrimary: "Welcome to AGES Global Dubai",
+  subtitleBold: "Your trusted agency for international study opportunities",
   body:
-    "AGES Global helps students from the UAE and beyond find the right universities worldwide — from choosing where to study abroad to university admissions, student visa support, scholarships, and arrival planning.",
+    "AGES Global helps students secure university admissions, student visas, and scholarships across the UK, USA, Canada, Germany, and Europe — with expert, ethical guidance at every step.",
+  bodySecondary:
+    "From university shortlisting to arrival overseas, we manage your full study abroad journey.",
 } as const;
 
 export const aboutSeoCopy = {
-  eyebrow: "Study abroad · UAE",
-  title: "International education agency · Dubai",
-  introHighlight:
-    "AGES Global helps UAE students pursue study abroad goals with university admissions planning, student visa support, and scholarships guidance — targeting destinations including the UK, USA, Canada, Germany and Europe.",
-  supportBullets: [
-    "University admissions",
-    "Student visa support",
-    "Scholarships · planning",
-  ],
+  eyebrow: "About us",
+  title: "About Us",
   paragraphs: [
-    "As an ICEF-accredited international education agency and study abroad consultancy in Dubai, we combine ethical counselling with structured pathways across 30+ countries — supporting university admissions, student visas and scholarships for international students with transparent, personalised advice.",
+    "We are a leading international education agency committed to guiding students toward exceptional global academic opportunities. With extensive experience in international admissions and student support, we ensure a smooth, transparent process from consultation through university placement.",
+    "As an ICEF-accredited education agency in Dubai, AGES Global provides structured and transparent guidance for students applying to universities across 30+ countries. Our approach is personalized, ethical, and focused on long-term academic and career success.",
   ],
 } as const;
 
 export const missionVisionSeoCopy = {
   mission:
-    "To simplify study abroad for students in the UAE and beyond — with clear guidance across university admissions, student visas, scholarships, and career-aligned outcomes.",
+    "To make study abroad simple, transparent, and achievable through expert guidance, structured planning, and honest advice.",
   vision:
-    "To be among the most trusted study abroad consultancies in Dubai — recognised for ethical recruitment, strong placements, and international student success.",
+    "To become a globally recognized education consultancy known for integrity, strong student outcomes, and lasting impact.",
+} as const;
+
+export const servicesSectionCopy = {
+  eyebrow: "Our services",
+  title: "Our Services",
+  lead: "Comprehensive support from counselling and applications through visas, funding, and life abroad.",
+} as const;
+
+export const whyChooseSectionCopy = {
+  eyebrow: "Why choose us",
+  title: "Why Choose AGES",
+  lead: "Trusted guidance, global partnerships, and outcomes-focused support for your study abroad journey.",
 } as const;
 
 export const partnershipsSeoCopy = {
-  lead:
-    "Partner with a trusted international education agency in Dubai. AGES Global collaborates with universities and education partners to expand global study opportunities.",
+  sectionTitle: "Partnerships & Careers",
+  partnershipsLead:
+    "Are you a university representative, educational partner, or certified counselor interested in collaboration?",
+  partnershipsBody:
+    "At AGES Dubai, we welcome partnerships that expand international opportunities for students and strengthen global academic connections. Kindly send your proposal to international@agesglobal.ae and our team will get in touch with you.",
   careersLead:
-    "Join a leading study abroad consultancy in Dubai — opportunities across counselling, student recruitment, marketing, and university relations.",
+    "We're also always looking for qualified, motivated professionals to join our growing international education team.",
+  careersBody:
+    "If you have experience in student recruitment, academic advising, marketing, or university relations, please send your CV to hr@agesglobal.ae. Our HR department will carefully review your application and contact shortlisted candidates for interviews.",
+} as const;
+
+export const ctaBannerCopy = {
+  eyebrow: "Explore more",
+  title: "Take the First Step",
+  presentationTitle: "View Presentation",
+  presentationBody:
+    "Discover our full range of services, partner universities, and global destinations through our detailed agency presentation.",
+  presentationCta: "Request Presentation",
+  formTitle: "Request Information",
+  formBody:
+    "Fill in your personal details and study goals, and our team will contact you shortly.",
+  formCta: "Request Information Form",
+} as const;
+
+export const contactSectionCopy = {
+  eyebrow: "Contact us",
+  title: "Contact Us",
+  lead: "Reach our Dubai team by phone, WhatsApp, or email — or use the form to share your profile and study goals.",
+  socialLead: "Follow us for updates and events:",
 } as const;
 
 export const termsConditions = {

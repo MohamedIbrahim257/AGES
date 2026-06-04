@@ -12,10 +12,7 @@ export function Faq() {
     <section id="faq" data-animate="section" className="section-shell-white">
       <div className="section-padding">
         <div className="section-intro">
-          <div className="flex justify-center">
-            <span className="eyebrow">{faqSectionCopy.eyebrow}</span>
-          </div>
-          <h2 className="section-heading">{faqSectionCopy.title}</h2>
+          <h2 className="section-heading !mt-0">{faqSectionCopy.title}</h2>
           <p className="section-lead">{faqSectionCopy.lead}</p>
         </div>
 

@@ -4,7 +4,7 @@ import {
   ShieldCheck,
   Users,
 } from "lucide-react";
-import { whyCards } from "@/data/content";
+import { whyCards, whyChooseSectionCopy } from "@/data/content";
 
 const icons = [GraduationCap, Globe2, Users, ShieldCheck] as const;
 
@@ -20,14 +20,8 @@ export function WhyChooseUs() {
     <section className="section-shell-white" data-animate="section">
       <div className="section-padding">
         <div className="section-intro">
-          <div className="flex justify-center">
-            <span className="eyebrow">Study abroad UAE</span>
-          </div>
-          <h2 className="section-heading">Why Choose AGES</h2>
-          <p className="section-lead">
-            Study abroad Dubai expertise — university admissions, student visa support, and scholarships guidance from an
-            ICEF-accredited international education agency.
-          </p>
+          <h2 className="section-heading !mt-0">{whyChooseSectionCopy.title}</h2>
+          <p className="section-lead">{whyChooseSectionCopy.lead}</p>
         </div>
         <div className="mx-auto mt-14 grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {whyCards.map((card, i) => {

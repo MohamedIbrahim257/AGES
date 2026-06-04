@@ -226,23 +226,18 @@ export function Hero() {
       />
 
       <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-14 sm:px-6 md:pb-20 md:pt-16 lg:px-8 lg:pb-24 lg:pt-20">
-        <div className="grid min-w-0 items-center gap-14 lg:grid-cols-2 lg:gap-16">
-          <div className="min-w-0 max-w-xl lg:max-w-none">
+        <div className="grid min-w-0 items-center gap-10 lg:grid-cols-2 lg:gap-16">
+          <div className="relative order-2 min-w-0 max-w-xl lg:order-1 lg:max-w-none">
             <p
               data-hero-badge
               className="eyebrow gap-2 border-[rgba(37,99,235,0.2)] bg-white/95 shadow-md shadow-blue-900/[0.06] backdrop-blur-md"
             >
               <span className="h-2 w-2 shrink-0 rounded-full bg-[var(--gold)] shadow-[0_0_0_3px_rgba(201,162,39,0.22)]" aria-hidden />
-              ICEF Accredited · International Education Agency UAE
+              {heroSeoCopy.badgeLabel}
             </p>
 
-            <h1 className="font-display mt-7 text-[2.35rem] font-semibold leading-[1.08] tracking-tight text-[var(--heading)] sm:text-5xl lg:text-[3.2rem]">
-              <span data-hero-line className="block">
-                {heroSeoCopy.titlePrimary}
-              </span>
-              <span data-hero-line className="mt-2 block xl:whitespace-nowrap">
-                {heroSeoCopy.titleBrand}
-              </span>
+            <h1 data-hero-line className="font-display mt-7 text-[2.35rem] font-semibold leading-[1.08] tracking-tight text-[var(--heading)] sm:text-5xl lg:text-[3.2rem]">
+              {heroSeoCopy.titlePrimary}
             </h1>
 
             <p data-hero-sub className="mt-6 text-lg font-semibold leading-snug text-[var(--heading)] sm:text-xl">
@@ -251,6 +246,9 @@ export function Hero() {
 
             <p data-hero-sub className="mt-4 max-w-[34rem] text-[17px] leading-relaxed text-[var(--body-muted)] md:text-[1.0625rem]">
               {heroSeoCopy.body}
+            </p>
+            <p data-hero-sub className="mt-3 max-w-[34rem] text-[17px] leading-relaxed text-[var(--body-muted)] md:text-[1.0625rem]">
+              {heroSeoCopy.bodySecondary}
             </p>
 
             <div data-hero-actions className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -302,23 +300,26 @@ export function Hero() {
             </ul>
           </div>
 
-          <div data-hero-image className="relative min-w-0 w-full max-w-full lg:justify-self-end">
+          <div
+            data-hero-image
+            className="relative order-1 mx-auto w-full min-w-0 max-w-md lg:order-2 lg:max-w-none lg:justify-self-end"
+          >
             <div className="pointer-events-none absolute -inset-4 rounded-[2.35rem] bg-gradient-to-br from-blue-500/18 via-transparent to-indigo-400/12 blur-xl" />
-            <div className="relative aspect-[4/3] w-full max-w-xl overflow-hidden rounded-[2rem] bg-slate-200 shadow-[var(--shadow-soft)] ring-[3px] ring-white lg:max-w-none">
+            <div className="relative aspect-square w-full overflow-hidden rounded-[2rem] bg-slate-200 shadow-[var(--shadow-soft)] ring-[3px] ring-white lg:aspect-[4/3]">
               <div
                 data-hero-parallax-inner
-                className="absolute inset-[-12%] h-[124%] will-change-transform"
+                className="absolute inset-[-8%] h-[116%] will-change-transform"
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=82"
-                  alt="Study abroad support in Dubai — university admissions and student visa guidance for UAE students"
+                  src="/images/hero-students-world-map.png"
+                  alt="Students exploring global study destinations on a world map with AGES Global Dubai"
                   fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover object-[center_40%]"
+                  sizes="(max-width: 1024px) 90vw, 50vw"
+                  className="object-cover object-center"
                   priority
                 />
               </div>
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-[var(--brand)]/[0.08] via-transparent to-transparent" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-[var(--brand)]/[0.06] via-transparent to-transparent" />
             </div>
           </div>
         </div>

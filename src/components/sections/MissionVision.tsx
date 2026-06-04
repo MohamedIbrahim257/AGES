@@ -10,10 +10,7 @@ export function MissionVision() {
     >
       <div className="section-padding">
         <div className="section-intro">
-          <div className="flex justify-center">
-            <span className="eyebrow">Our purpose</span>
-          </div>
-          <h2 id="purpose-heading" className="section-heading">
+          <h2 id="purpose-heading" className="section-heading !mt-0">
             Driven by Mission, Guided by Vision
           </h2>
         </div>

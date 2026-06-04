@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Calendar, Tag } from "lucide-react";
-import { newsItems } from "@/data/content";
+import { eventsNewsCopy, newsItems } from "@/data/content";
 
 export function EventsNews() {
   return (
@@ -9,11 +9,8 @@ export function EventsNews() {
       <div className="section-padding">
         <div className="mx-auto flex max-w-6xl flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl text-center md:text-left">
-            <div className="flex justify-center md:justify-start">
-              <span className="eyebrow">Stay informed</span>
-            </div>
-            <h2 className="section-heading md:text-left">Events &amp; News</h2>
-            <p className="section-lead-tight md:text-left">Latest updates, scholarship alerts, and education insights.</p>
+            <h2 className="section-heading !mt-0 md:text-left">{eventsNewsCopy.title}</h2>
+            <p className="section-lead-tight md:text-left">{eventsNewsCopy.lead}</p>
           </div>
           <Link
             href="#contact"

@@ -26,24 +26,24 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-500 ${
+      className={`sticky top-0 z-50 overflow-visible transition-all duration-500 ${
         scrolled
           ? "border-b border-[rgba(6,21,38,0.08)] bg-[rgba(255,255,255,0.78)] shadow-[0_8px_30px_-12px_rgba(6,21,38,0.1)] backdrop-blur-xl"
           : "border-b border-transparent bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-[4.5rem] max-h-[4.5rem] max-w-7xl items-center justify-between gap-3 overflow-visible px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="focus-ring relative flex shrink-0 items-center rounded-lg py-1 outline-offset-4"
+          className="focus-ring relative z-10 flex h-[4.5rem] shrink-0 items-center overflow-visible rounded-lg outline-offset-4"
         >
-          <span className="relative block h-10 w-[132px] sm:h-11 sm:w-[148px]">
+          <span className="relative block h-11 w-[112px] origin-left scale-[1.62] sm:h-12 sm:w-[122px] sm:scale-[1.72] md:w-[132px] md:scale-[1.82]">
             <Image
-              src="/images/ages-logo.png"
+              src={SITE.logoSrc}
               alt={`${SITE.name} logo`}
               fill
               priority
-              sizes="(max-width: 640px) 132px, 148px"
+              sizes="(max-width: 640px) 180px, 240px"
               className="object-contain object-left"
             />
           </span>
