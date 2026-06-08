@@ -305,17 +305,21 @@ export function Hero() {
             className="relative order-1 mx-auto w-full min-w-0 max-w-md lg:order-2 lg:max-w-none lg:justify-self-end"
           >
             <div className="pointer-events-none absolute -inset-4 rounded-[2.35rem] bg-gradient-to-br from-blue-500/18 via-transparent to-indigo-400/12 blur-xl" />
-            <div className="relative aspect-[118/100] w-full overflow-hidden rounded-[2rem] bg-[#060f1a] shadow-[var(--shadow-soft)] ring-[3px] ring-white">
-              <div data-hero-parallax-inner className="absolute inset-0 will-change-transform">
+            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[2rem] bg-slate-200 shadow-[var(--shadow-soft)] ring-[3px] ring-white sm:aspect-video">
+              <div
+                data-hero-parallax-inner
+                className="absolute inset-[-6%] h-[112%] will-change-transform"
+              >
                 <Image
-                  src="/images/hero-ages-global.png"
-                  alt="AGES Global Dubai — global study destinations and international education"
+                  src="/images/hero-students-world-map.png"
+                  alt="Students planning study abroad destinations together on a world map"
                   fill
                   sizes="(max-width: 1024px) 90vw, 50vw"
-                  className="object-contain object-center"
+                  className="object-cover object-[center_42%]"
                   priority
                 />
               </div>
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-[var(--brand)]/[0.06] via-transparent to-transparent" />
             </div>
           </div>
         </div>

@@ -4,6 +4,7 @@ export const SITE = {
   legalName: "AGES Global",
   logoSrc: "/images/ages-logooo.png",
   url: "https://www.agesglobaldubai.com",
+  calendlyUrl: "https://calendly.com/dubaiages/30-minute-meeting",
   email: "ages.dubai@agesglobal.ae",
   phoneDisplay: "+971 527 713 606",
   phoneTel: "+971527713606",
