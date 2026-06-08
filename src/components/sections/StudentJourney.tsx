@@ -62,9 +62,6 @@ export function StudentJourney() {
           <div className="overflow-hidden rounded-[1.75rem] bg-[var(--surface-soft)] shadow-[var(--shadow-card)] ring-1 ring-[rgba(6,21,38,0.06)]">
             <StudentJourneyVideo />
           </div>
-          <p className="mt-4 text-center text-sm text-[var(--body-muted)]">
-            Watch how AGES Global supports you from application through arrival overseas.
-          </p>
         </div>
       </div>
     </section>

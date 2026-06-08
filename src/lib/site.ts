@@ -18,9 +18,9 @@ export const SITE = {
   hrEmail: "hr@agesglobal.ae",
   /** Add full profile URLs when available; links hidden when href is empty */
   social: [
-    { label: "Facebook", href: "" },
-    { label: "Instagram", href: "" },
-    { label: "LinkedIn", href: "" },
+    { label: "Facebook", href: "https://www.facebook.com/share/1H4CJqA39K/" },
+    { label: "Instagram", href: "https://www.instagram.com/ageseducation?igsh=MWkwa3BlbHprdHRncg==" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/alphatechedu/" },
   ] as const,
 } as const;
 
