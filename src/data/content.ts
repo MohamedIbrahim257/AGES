@@ -249,7 +249,7 @@ export const faqItems: FaqItem[] = [
 
 export const heroSeoCopy = {
   badgeLabel: "ICEF Accredited · International Education Agency",
-  titlePrimary: "Welcome to AGES Global Dubai",
+  titlePrimary: "Welcome to AGES Global",
   subtitleBold: "Your trusted agency for international study opportunities",
   body:
     "AGES Global helps students secure university admissions, student visas, and scholarships across the UK, USA, Canada, Germany, and Europe — with expert, ethical guidance at every step.",

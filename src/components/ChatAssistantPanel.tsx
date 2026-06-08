@@ -33,7 +33,7 @@ function lid() {
 }
 
 const welcomeLines = [
-  "👋 Welcome to AGES Global Dubai! We're happy to help you start your study abroad journey. May I ask a few quick questions to better understand your profile?",
+  "👋 Welcome to AGES Global! We're happy to help you start your study abroad journey. May I ask a few quick questions to better understand your profile?",
   "Could you please tell me your age?",
 ];
 
