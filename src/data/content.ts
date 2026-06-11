@@ -172,8 +172,9 @@ export const studentJourneyCopy = {
 export const studentJourneyVideo = {
   driveFileId: "10_ElIn3SFD1AcxVLL3Kbpbnkno0CPvNS",
   embedUrl: "https://drive.google.com/file/d/10_ElIn3SFD1AcxVLL3Kbpbnkno0CPvNS/preview",
-  posterSrc: "/images/journey-video-poster.jpg",
-  posterAlt: "Students in a classroom planning their international study abroad journey",
+  /** Unsplash — https://unsplash.com/photos/three-men-and-laughing-two-women-walking-side-by-side-jCEpN62oWL4 */
+  posterSrc: "/images/student-journey-cover.jpg",
+  posterAlt: "International students walking together on campus during their study abroad journey",
 } as const;
 
 export type FaqItem = {
@@ -247,6 +248,13 @@ export const faqItems: FaqItem[] = [
   },
 ];
 
+/** Hero background — campus students (Mixkit, free for commercial use) */
+export const heroVideo = {
+  src: "https://assets.mixkit.co/videos/preview/mixkit-group-of-students-walking-through-a-university-campus-1570-large.mp4",
+  posterSrc: "/images/journey-video-poster.jpg",
+  posterAlt: "Students on a university campus planning their study abroad journey",
+} as const;
+
 export const heroSeoCopy = {
   badgeLabel: "ICEF Accredited · International Education Agency",
   titlePrimary: "Welcome to AGES Global",
@@ -260,6 +268,8 @@ export const heroSeoCopy = {
 export const aboutSeoCopy = {
   eyebrow: "About us",
   title: "About Us",
+  imageSrc: "/images/about-university-campus.jpg",
+  imageAlt: "Prestigious international university campus representing global study abroad destinations with AGES Global Dubai",
   paragraphs: [
     "We are a leading international education agency committed to guiding students toward exceptional global academic opportunities. With extensive experience in international admissions and student support, we ensure a smooth, transparent process from consultation through university placement.",
     "As an ICEF-accredited education agency in Dubai, AGES Global provides structured and transparent guidance for students applying to universities across 30+ countries. Our approach is personalized, ethical, and focused on long-term academic and career success.",

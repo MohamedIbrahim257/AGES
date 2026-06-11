@@ -22,6 +22,11 @@ export const SITE = {
     { label: "Instagram", href: "https://www.instagram.com/ageseducation?igsh=MWkwa3BlbHprdHRncg==" },
     { label: "LinkedIn", href: "https://www.linkedin.com/company/alphatechedu/" },
   ] as const,
+  icef: {
+    profileUrl: "https://www.icef.com/agency/0010J00001vXDGeQAO",
+    badgeSrc: "https://icef-api-production.s3.eu-central-1.amazonaws.com/ias_material/0010J00001vXDGeQAO_badge.png",
+    badgeAlt: "ICEF Agency Status — verify AGES Global accreditation",
+  },
 } as const;
 
 export function whatsappHref(message?: string) {

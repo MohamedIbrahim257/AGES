@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
         hostname: "images.unsplash.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "icef-api-production.s3.eu-central-1.amazonaws.com",
+        pathname: "/**",
+      },
     ],
   },
 };

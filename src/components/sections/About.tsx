@@ -45,11 +45,12 @@ export function About() {
             <div className="relative">
               <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] bg-slate-200 shadow-[var(--shadow-soft)] ring-[3px] ring-white lg:aspect-[3/4]">
                 <Image
-                  src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1920&q=88"
-                  alt="Students preparing for international study abroad with AGES Global Dubai"
+                  src={aboutSeoCopy.imageSrc}
+                  alt={aboutSeoCopy.imageAlt}
                   fill
-                  className="object-cover object-[center_45%]"
+                  className="object-cover object-center"
                   sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 50vw, 640px"
+                  priority
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[var(--heading)]/[0.18] via-transparent to-transparent" />
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/25 to-transparent" />
