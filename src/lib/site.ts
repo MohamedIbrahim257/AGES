@@ -9,8 +9,8 @@ export const SITE = {
   phoneDisplay: "+971 527 713 606",
   phoneTel: "+971527713606",
   /** WhatsApp number digits only, no + */
-  whatsappDigits: "971565036746",
-  whatsappDisplay: "+971 565 036 746",
+  whatsappDigits: "971586130484",
+  whatsappDisplay: "+971 586 130 484",
   addressLine: "Dubai",
   city: "Dubai",
   country: "United Arab Emirates",

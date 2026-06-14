@@ -48,7 +48,7 @@ export function About() {
                   src={aboutSeoCopy.imageSrc}
                   alt={aboutSeoCopy.imageAlt}
                   fill
-                  className="object-cover object-center"
+                  className="object-cover object-[center_40%]"
                   sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 50vw, 640px"
                   priority
                 />

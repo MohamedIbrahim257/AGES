@@ -25,7 +25,7 @@ export function StudentJourneyVideo() {
             src={studentJourneyVideo.posterSrc}
             alt={studentJourneyVideo.posterAlt}
             fill
-            className="object-cover object-[center_45%]"
+            className="object-cover object-[center_42%]"
             sizes="(max-width: 896px) 100vw, 896px"
             priority
           />

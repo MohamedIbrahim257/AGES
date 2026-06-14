@@ -172,9 +172,8 @@ export const studentJourneyCopy = {
 export const studentJourneyVideo = {
   driveFileId: "10_ElIn3SFD1AcxVLL3Kbpbnkno0CPvNS",
   embedUrl: "https://drive.google.com/file/d/10_ElIn3SFD1AcxVLL3Kbpbnkno0CPvNS/preview",
-  /** Unsplash — https://unsplash.com/photos/three-men-and-laughing-two-women-walking-side-by-side-jCEpN62oWL4 */
-  posterSrc: "/images/student-journey-cover.jpg",
-  posterAlt: "International students walking together on campus during their study abroad journey",
+  posterSrc: "/images/student-journey-planning-cover.png",
+  posterAlt: "Diverse students planning study abroad destinations together on a world map",
 } as const;
 
 export type FaqItem = {
@@ -268,8 +267,9 @@ export const heroSeoCopy = {
 export const aboutSeoCopy = {
   eyebrow: "About us",
   title: "About Us",
-  imageSrc: "/images/about-university-campus.jpg",
-  imageAlt: "Prestigious international university campus representing global study abroad destinations with AGES Global Dubai",
+  /** Unsplash — https://unsplash.com/photos/four-people-watching-on-white-macbook-on-top-of-glass-top-table-vdXMSiX-n6M */
+  imageSrc: "/images/about-study-abroad.jpg",
+  imageAlt: "Diverse international students collaborating on university planning with AGES Global Dubai",
   paragraphs: [
     "We are a leading international education agency committed to guiding students toward exceptional global academic opportunities. With extensive experience in international admissions and student support, we ensure a smooth, transparent process from consultation through university placement.",
     "As an ICEF-accredited education agency in Dubai, AGES Global provides structured and transparent guidance for students applying to universities across 30+ countries. Our approach is personalized, ethical, and focused on long-term academic and career success.",
