@@ -42,7 +42,7 @@ export default async function StudyAbroadGuidePage({ params }: Props) {
     <>
       <Header />
       <article className="border-b border-[var(--border)] bg-[var(--surface)]">
-        <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
+        <div className="mx-auto max-w-3xl px-4 pb-12 pt-[calc(5.5rem+3rem)] sm:px-6 md:py-16 lg:px-8">
           <nav aria-label="Breadcrumb" className="text-sm text-[var(--muted)]">
             <Link href="/" className="font-medium text-[var(--accent-mid)] hover:underline">
               Home

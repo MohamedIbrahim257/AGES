@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { BookConsultationButton } from "@/components/BookConsultationButton";
@@ -17,27 +17,54 @@ const nav = [
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 12);
+
+      if (open) {
+        setVisible(true);
+        lastScrollY.current = y;
+        return;
+      }
+
+      const delta = y - lastScrollY.current;
+
+      if (y <= 80) {
+        setVisible(true);
+      } else if (delta > 8) {
+        setVisible(false);
+      } else if (delta < -8) {
+        setVisible(true);
+      }
+
+      lastScrollY.current = y;
+    };
+
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [open]);
 
   return (
     <header
-      className={`sticky top-0 z-50 overflow-visible transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 overflow-visible transition-[transform,background-color,box-shadow,border-color] duration-300 ${
+        visible || open ? "translate-y-0" : "-translate-y-full"
+      } ${
         scrolled
           ? "border-b border-[rgba(6,21,38,0.08)] bg-[rgba(255,255,255,0.78)] shadow-[0_8px_30px_-12px_rgba(6,21,38,0.1)] backdrop-blur-xl"
           : "border-b border-transparent bg-transparent"
       }`}
     >
-      <div className="mx-auto flex h-[4.5rem] max-h-[4.5rem] max-w-7xl items-center justify-between gap-3 overflow-visible px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-[5.5rem] max-h-[5.5rem] max-w-7xl items-center justify-between gap-3 overflow-visible px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="focus-ring relative z-10 flex h-[4.5rem] shrink-0 items-center overflow-visible rounded-lg outline-offset-4"
+          className="focus-ring relative z-10 flex h-[5.5rem] shrink-0 items-center overflow-visible rounded-lg outline-offset-4"
         >
-          <span className="relative block h-11 w-[112px] origin-left scale-[1.62] sm:h-12 sm:w-[122px] sm:scale-[1.72] md:w-[132px] md:scale-[1.82]">
+          <span className="relative block h-11 w-[112px] origin-left scale-[2.08] sm:h-12 sm:w-[122px] sm:scale-[2.25] md:w-[132px] md:scale-[2.35]">
             <Image
               src={SITE.logoSrc}
               alt={`${SITE.name} logo`}

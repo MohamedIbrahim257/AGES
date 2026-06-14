@@ -232,7 +232,7 @@ export function Hero() {
         aria-hidden
       />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 pb-16 pt-14 sm:px-6 md:pb-20 md:pt-16 lg:px-8 lg:pb-24 lg:pt-20">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 pb-16 pt-[calc(5.5rem+3.5rem)] sm:px-6 md:pb-20 md:pt-[calc(5.5rem+4rem)] lg:px-8 lg:pb-24 lg:pt-[calc(5.5rem+5rem)]">
         <div className="mx-auto min-w-0 max-w-3xl">
           <p
             data-hero-badge
