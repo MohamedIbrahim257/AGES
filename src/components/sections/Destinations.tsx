@@ -33,31 +33,36 @@ export function Destinations() {
 
         {/* Banner */}
         <div className="relative mx-auto mt-12 max-w-6xl overflow-hidden rounded-[1.75rem] shadow-[var(--shadow-card)] ring-1 ring-[rgba(6,21,38,0.06)]">
-          <div className="relative aspect-[16/10] min-h-[200px] w-full sm:aspect-[2.4/1] md:aspect-[21/9] md:min-h-[240px]">
-            <Image
-              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=82"
-              alt="Earth at night from space — representing worldwide study pathways"
-              fill
-              className="object-cover object-[center_45%] brightness-[0.92] saturate-[1.05]"
-              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1152px"
-            />
-            {/* Depth */}
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" aria-hidden />
-            <div
-              className="pointer-events-none absolute inset-0 bg-[linear-gradient(105deg,rgba(10,37,64,0.92)_0%,rgba(10,37,64,0.55)_42%,rgba(10,37,64,0.08)_72%,transparent_100%)]"
-              aria-hidden
-            />
-            <div className="relative flex h-full flex-col justify-end px-6 pb-8 pt-10 sm:justify-center sm:pb-10 sm:pt-10 md:px-12 lg:max-w-xl lg:justify-center lg:pb-12">
+          <div className="relative sm:aspect-[2.4/1] md:aspect-[21/9] sm:min-h-[220px] md:min-h-[240px]">
+            <div className="relative h-52 w-full sm:absolute sm:inset-0 sm:h-full">
+              <Image
+                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=82"
+                alt="Earth at night from space — representing worldwide study pathways"
+                fill
+                className="object-cover object-[center_35%] sm:object-[center_45%] brightness-[0.92] saturate-[1.05]"
+                sizes="100vw"
+              />
+              <div
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0a2540]/55 via-transparent to-transparent sm:from-black/35 sm:via-transparent"
+                aria-hidden
+              />
+              <div
+                className="pointer-events-none absolute inset-0 hidden bg-[linear-gradient(105deg,rgba(10,37,64,0.92)_0%,rgba(10,37,64,0.55)_42%,rgba(10,37,64,0.08)_72%,transparent_100%)] sm:block"
+                aria-hidden
+              />
+            </div>
+
+            <div className="relative flex flex-col justify-end bg-gradient-to-br from-[#0a2540] via-[#0a2139] to-[#071727] px-5 py-7 sm:absolute sm:inset-0 sm:justify-center sm:bg-transparent sm:px-8 sm:py-10 md:px-12 lg:max-w-xl lg:pb-12">
               <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/75">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 ring-1 ring-white/15 backdrop-blur-sm">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/10 ring-1 ring-white/15 backdrop-blur-sm">
                   <MapPin className="h-4 w-4 text-sky-200" aria-hidden />
                 </span>
                 {destinationsSectionCopy.bannerEyebrow}
               </p>
-              <p className="mt-4 font-display text-[1.65rem] font-semibold leading-[1.15] tracking-tight text-white sm:text-3xl md:text-[2rem]">
+              <p className="mt-3 font-display text-xl font-semibold leading-snug tracking-tight text-white sm:mt-4 sm:text-3xl md:text-[2rem] md:leading-[1.15]">
                 {destinationsSectionCopy.bannerTitle}
               </p>
-              <p className="mt-3 max-w-md text-[15px] leading-relaxed text-white/82 md:text-base">
+              <p className="mt-2 max-w-md text-sm leading-relaxed text-white/82 sm:mt-3 sm:text-[15px] md:text-base">
                 {destinationsSectionCopy.bannerBody}
               </p>
             </div>
