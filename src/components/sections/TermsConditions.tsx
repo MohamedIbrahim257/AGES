@@ -1,11 +1,30 @@
+import Image from "next/image";
 import { termsConditions } from "@/data/content";
 
 export function TermsConditions() {
   return (
-    <section id="terms" data-animate="section" className="section-shell-band">
-      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 md:py-14 lg:px-8">
+    <section id="terms" data-animate="section" className="relative overflow-hidden border-b border-[var(--border)]">
+      <div className="pointer-events-none absolute inset-0" aria-hidden>
+        <Image
+          src={termsConditions.backgroundSrc}
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-[center_35%]"
+        />
+      </div>
+      <div
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(165deg,rgba(237,242,250,0.94)_0%,rgba(227,235,246,0.9)_45%,rgba(218,230,243,0.88)_100%)]"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(165deg,rgba(10,37,64,0.08)_0%,rgba(29,86,230,0.06)_50%,transparent_100%)]"
+        aria-hidden
+      />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-10 sm:px-6 md:py-14 lg:px-8">
         <div className="mx-auto max-w-3xl">
-          <div className="overflow-hidden rounded-[1.75rem] border border-[rgba(6,21,38,0.08)] bg-[var(--surface)] shadow-[var(--shadow-soft)] ring-1 ring-[rgba(6,21,38,0.04)]">
+          <div className="overflow-hidden rounded-[1.75rem] border border-[rgba(6,21,38,0.08)] bg-[var(--surface)]/95 shadow-[var(--shadow-soft)] ring-1 ring-[rgba(6,21,38,0.04)] backdrop-blur-sm">
             <header className="border-b border-[var(--border)] bg-gradient-to-b from-[var(--surface-soft)]/50 to-transparent px-5 py-5 text-center sm:px-8 md:px-9 md:py-6">
               <div className="mx-auto mb-2 h-px w-10 rounded-full bg-gradient-to-r from-transparent via-[var(--accent-mid)] to-transparent opacity-80" aria-hidden />
               <h2 className="section-heading !mt-0">Terms &amp; Conditions</h2>

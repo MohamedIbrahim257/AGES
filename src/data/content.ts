@@ -296,6 +296,8 @@ export const whyChooseSectionCopy = {
 } as const;
 
 export const partnershipsSeoCopy = {
+  /** Unsplash — https://unsplash.com/photos/two-person-handshake-photography-5QgIuuBxKwM */
+  backgroundSrc: "/images/partnerships-careers-bg.jpg",
   sectionTitle: "Partnerships & Careers",
   partnershipsLead:
     "Are you a university representative, educational partner, or certified counselor interested in collaboration?",
@@ -328,6 +330,8 @@ export const contactSectionCopy = {
 } as const;
 
 export const termsConditions = {
+  /** Unsplash — https://unsplash.com/photos/person-signing-document-5QgIuuBxKwM */
+  backgroundSrc: "/images/terms-conditions-bg.jpg",
   subtitle:
     "Please review the following service terms before engaging with AGES Global Dubai.",
   items: [

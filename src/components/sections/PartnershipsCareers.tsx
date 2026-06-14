@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Handshake, Mail, UserRound } from "lucide-react";
 import { partnershipsSeoCopy } from "@/data/content";
@@ -8,11 +9,27 @@ export function PartnershipsCareers() {
     <section
       id="partnerships"
       data-animate="section"
-      className="relative overflow-hidden section-shell-band"
+      className="relative overflow-hidden border-b border-[var(--border)]"
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(37,99,235,0.08),transparent)]" />
+      <div className="pointer-events-none absolute inset-0" aria-hidden>
+        <Image
+          src={partnershipsSeoCopy.backgroundSrc}
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+      </div>
+      <div
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(165deg,rgba(237,242,250,0.94)_0%,rgba(227,235,246,0.9)_45%,rgba(218,230,243,0.88)_100%)]"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(165deg,rgba(10,37,64,0.08)_0%,rgba(29,86,230,0.06)_50%,transparent_100%)]"
+        aria-hidden
+      />
 
-      <div className="section-padding relative">
+      <div className="section-padding relative z-10">
         <div className="section-intro">
           <h2 className="section-heading !mt-0">{partnershipsSeoCopy.sectionTitle}</h2>
         </div>
@@ -54,7 +71,7 @@ export function PartnershipsCareers() {
 
           <article
             data-hover-card
-            className="relative flex flex-col overflow-hidden rounded-[2rem] border border-[rgba(6,21,38,0.08)] bg-[var(--surface)] p-8 shadow-[var(--shadow-card)] md:p-10"
+            className="relative flex flex-col overflow-hidden rounded-[2rem] border border-[rgba(6,21,38,0.08)] bg-[var(--surface)]/95 p-8 shadow-[var(--shadow-card)] backdrop-blur-sm md:p-10"
           >
             <div className="relative flex items-start gap-4">
               <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--accent-soft)] to-white ring-1 ring-[rgba(37,99,235,0.18)]">
