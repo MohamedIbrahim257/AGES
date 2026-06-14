@@ -124,9 +124,9 @@ export function Header() {
                 {item.label}
               </a>
             ))}
-            <a href={`tel:${SITE.phoneTel}`} className="rounded-lg px-3 py-2.5 font-medium text-[var(--accent-mid)]">
+            {/* <a href={`tel:${SITE.phoneTel}`} className="rounded-lg px-3 py-2.5 font-medium text-[var(--accent-mid)]">
               Call {SITE.phoneDisplay}
-            </a>
+            </a> */}
           </div>
         </div>
       ) : null}

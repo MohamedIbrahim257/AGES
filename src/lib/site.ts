@@ -6,7 +6,7 @@ export const SITE = {
   url: "https://www.agesglobaldubai.com",
   calendlyUrl: "https://calendly.com/dubaiages/30-minute-meeting",
   email: "ages.dubai@agesglobal.ae",
-  phoneDisplay: "+971 527 713 606",
+  // phoneDisplay: "+971 527 713 606",
   phoneTel: "+971527713606",
   /** WhatsApp number digits only, no + */
   whatsappDigits: "971586130484",
