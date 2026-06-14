@@ -41,7 +41,7 @@ function runHeroCounters(root: HTMLElement) {
 
 function HeroVideoBackground() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [reduceMotion, setReduceMotion] = useState(true);
+  const [reduceMotion, setReduceMotion] = useState(false);
 
   useEffect(() => {
     const reduced = prefersReducedMotion();
@@ -91,7 +91,7 @@ export function Hero() {
       const showAll = () => {
         gsap.set(
           root.querySelectorAll(
-            "[data-hero-video],[data-hero-bg],[data-hero-badge],[data-hero-line],[data-hero-sub],[data-hero-actions],[data-hero-actions] a,[data-hero-wa],[data-hero-stat],[data-hero-scroll]",
+            "[data-hero-badge],[data-hero-line],[data-hero-sub],[data-hero-actions],[data-hero-actions] a,[data-hero-wa],[data-hero-stat],[data-hero-scroll]",
           ),
           {
             autoAlpha: 1,
@@ -100,6 +100,7 @@ export function Hero() {
             filter: "none",
           },
         );
+        gsap.set(root.querySelectorAll("[data-hero-video],[data-hero-bg]"), { autoAlpha: 1, scale: 1 });
         root.querySelectorAll<HTMLElement>("[data-hero-count]").forEach((el) => {
           const t = el.dataset.target;
           const s = el.dataset.suffix ?? "";
@@ -113,8 +114,7 @@ export function Hero() {
       }
 
       const ctx = gsap.context(() => {
-        gsap.set(root.querySelectorAll("[data-hero-video]"), { autoAlpha: 0, scale: 1.04 });
-        gsap.set(root.querySelectorAll("[data-hero-bg]"), { autoAlpha: 0, scale: 0.88 });
+        gsap.set(root.querySelectorAll("[data-hero-video],[data-hero-bg]"), { autoAlpha: 1, scale: 1 });
         gsap.set(root.querySelectorAll("[data-hero-badge]"), { autoAlpha: 0, y: 28 });
         gsap.set(root.querySelectorAll("[data-hero-line]"), {
           autoAlpha: 0,
@@ -134,23 +134,6 @@ export function Hero() {
         const tl = gsap.timeline({
           defaults: { ease: "power4.out" },
         });
-
-        tl.fromTo(
-          "[data-hero-video]",
-          { autoAlpha: 0, scale: 1.04 },
-          { autoAlpha: 1, scale: 1, duration: 1.35, ease: "power2.out" },
-          0,
-        );
-
-        const bg = root.querySelectorAll("[data-hero-bg]");
-        if (bg.length) {
-          tl.fromTo(
-            bg,
-            { autoAlpha: 0, scale: 0.88 },
-            { autoAlpha: 1, scale: 1, duration: 1.2, stagger: 0.12, ease: "power2.out" },
-            0.08,
-          );
-        }
 
         tl.fromTo(
           "[data-hero-badge]",

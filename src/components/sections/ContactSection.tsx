@@ -1,4 +1,4 @@
-import { Mail, Phone } from "lucide-react";
+import { Mail } from "lucide-react";
 import { ChatAssistantPanel } from "@/components/ChatAssistantPanel";
 import { contactSectionCopy } from "@/data/content";
 import { SITE, whatsappHref } from "@/lib/site";
@@ -38,10 +38,6 @@ export function ContactSection() {
                 {SITE.city}, {SITE.country}
               </p>
               <div className="mt-4 flex flex-col gap-3 text-sm text-[var(--heading)]">
-                <a href={`tel:${SITE.phoneTel}`} className="focus-ring inline-flex items-center gap-2 hover:text-[var(--accent-mid)]">
-                  <Phone className="h-4 w-4 shrink-0" aria-hidden />
-                  Phone: {SITE.phoneDisplay}
-                </a>
                 <a
                   href={whatsappPlain}
                   target="_blank"

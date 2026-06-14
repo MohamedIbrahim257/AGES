@@ -1,6 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, Handshake, Mail, UserRound } from "lucide-react";
+import { Handshake, Mail, UserRound } from "lucide-react";
 import { partnershipsSeoCopy } from "@/data/content";
 import { SITE } from "@/lib/site";
 
@@ -59,13 +58,6 @@ export function PartnershipsCareers() {
                 <Mail className="h-4 w-4 shrink-0 opacity-90" aria-hidden />
                 {SITE.partnershipsEmail}
               </a>
-              <Link
-                href={`mailto:${SITE.partnershipsEmail}?subject=${encodeURIComponent("Partnership proposal")}`}
-                className="relative mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-white/95 transition hover:text-white"
-              >
-                Send your proposal
-                <ArrowRight className="h-4 w-4 opacity-90" aria-hidden />
-              </Link>
             </div>
           </article>
 

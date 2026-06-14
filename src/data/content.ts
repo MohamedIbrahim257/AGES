@@ -152,13 +152,13 @@ export const trustIndicators = [
 ];
 
 export const studentJourneySteps = [
-  { key: "apply", label: "Apply" },
-  { key: "prepare", label: "Prepare" },
-  { key: "submit", label: "Submit" },
-  { key: "offer", label: "Get offer" },
-  { key: "visa", label: "Visa" },
-  { key: "fly", label: "Fly" },
-  { key: "arrive", label: "Arrive" },
+  { key: "apply", label: "Apply", accent: "blue" as const },
+  { key: "prepare", label: "Prepare", accent: "purple" as const },
+  { key: "submit", label: "Submit", accent: "sky" as const },
+  { key: "offer", label: "Get offer", accent: "amber" as const },
+  { key: "visa", label: "Visa", accent: "green" as const },
+  { key: "fly", label: "Fly", accent: "rose" as const },
+  { key: "arrive", label: "Arrive", accent: "pink" as const },
 ] as const;
 
 export const studentJourneyCopy = {

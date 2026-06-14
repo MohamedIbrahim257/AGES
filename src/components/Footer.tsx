@@ -16,7 +16,7 @@ export function Footer() {
     <footer className="border-t border-white/[0.06] text-slate-300" style={{ background: "var(--footer-bg)" }}>
       <div className="section-padding grid gap-14 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <p className="font-display text-lg font-semibold tracking-tight text-white">{SITE.name}</p>
+          <p className="font-display text-lg font-semibold tracking-tight text-white">{SITE.legalName}</p>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-400">
             Your trusted agency for international study opportunities — university admissions, student visas, and
             scholarships with expert, ethical guidance.
@@ -49,15 +49,9 @@ export function Footer() {
         <div>
           <h2 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500">Contact</h2>
           <address className="mt-5 not-italic text-sm leading-relaxed text-slate-400">
-            {SITE.addressLine}
+            {SITE.country}
             <br />
-            {SITE.city}, {SITE.country}
-            <br />
-            <a href={`tel:${SITE.phoneTel}`} className="mt-3 inline-block text-slate-300 transition hover:text-white">
-              {SITE.phoneDisplay}
-            </a>
-            <br />
-            <a href={`mailto:${SITE.email}`} className="transition hover:text-white">
+            <a href={`mailto:${SITE.email}`} className="mt-3 inline-block transition hover:text-white">
               {SITE.email}
             </a>
           </address>
@@ -69,7 +63,7 @@ export function Footer() {
             © {new Date().getFullYear()} {SITE.legalName}. All rights reserved.
           </p>
           <p className="max-w-xl text-right text-slate-500 sm:text-right">
-            Study abroad Dubai · Study abroad UAE · International education agency
+            Study abroad UAE · International education agency
           </p>
         </div>
       </div>
