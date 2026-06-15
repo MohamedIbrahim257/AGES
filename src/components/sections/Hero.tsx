@@ -342,11 +342,11 @@ export function Hero() {
         <div data-hero-scroll className="mt-16 flex justify-center md:mt-20">
           <a
             href="#about"
-            className="focus-ring group inline-flex flex-col items-center gap-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--muted)] transition hover:text-[var(--heading)]"
+            className="focus-ring group inline-flex flex-col items-center gap-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--heading)] transition hover:text-[var(--accent-mid)]"
           >
             Explore more
             <ChevronDown
-              className="hero-chevron-bob h-5 w-5 text-[var(--muted)] transition group-hover:text-[var(--accent-mid)]"
+              className="hero-chevron-bob h-5 w-5 text-[var(--heading)] transition group-hover:text-[var(--accent-mid)]"
               aria-hidden
             />
           </a>

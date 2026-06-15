@@ -80,7 +80,7 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="focus-ring rounded-lg px-3 py-2 text-[13px] font-medium text-[var(--body-muted)] transition hover:bg-[var(--accent-soft)] hover:text-[var(--heading)]"
+              className="focus-ring rounded-lg px-3 py-2 text-[13px] font-semibold text-[var(--heading)] transition hover:bg-[var(--accent-soft)] hover:text-[var(--accent-mid)]"
             >
               {item.label}
             </a>
@@ -118,7 +118,7 @@ export function Header() {
               <a
                 key={item.href}
                 href={item.href}
-                className="rounded-lg px-3 py-2.5 text-[var(--body-muted)] hover:bg-[var(--accent-soft)] hover:text-[var(--heading)]"
+                className="rounded-lg px-3 py-2.5 font-semibold text-[var(--heading)] hover:bg-[var(--accent-soft)] hover:text-[var(--accent-mid)]"
                 onClick={() => setOpen(false)}
               >
                 {item.label}
