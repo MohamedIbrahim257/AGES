@@ -47,7 +47,25 @@ function HeroVideoBackground() {
     const reduced = prefersReducedMotion();
     setReduceMotion(reduced);
     if (reduced) return;
-    videoRef.current?.play().catch(() => {});
+
+    const video = videoRef.current;
+    if (!video) return;
+
+    const playVideo = () => {
+      video.play().catch(() => {});
+    };
+
+    if (video.readyState >= 2) {
+      playVideo();
+    } else {
+      video.addEventListener("loadeddata", playVideo, { once: true });
+      video.addEventListener("canplay", playVideo, { once: true });
+    }
+
+    return () => {
+      video.removeEventListener("loadeddata", playVideo);
+      video.removeEventListener("canplay", playVideo);
+    };
   }, []);
 
   if (reduceMotion) {
@@ -57,7 +75,7 @@ function HeroVideoBackground() {
         alt=""
         fill
         sizes="100vw"
-        className="object-cover object-[center_40%]"
+        className="object-cover object-[center_42%] sm:object-[center_45%]"
         priority
         aria-hidden
       />
@@ -71,8 +89,9 @@ function HeroVideoBackground() {
       muted
       loop
       playsInline
+      preload="auto"
       poster={heroVideo.posterSrc}
-      className="absolute inset-0 h-full w-full object-cover object-[center_40%]"
+      className="absolute inset-0 h-full w-full object-cover object-[center_42%] sm:object-[center_45%]"
       aria-hidden
     >
       <source src={heroVideo.src} type="video/mp4" />
@@ -204,26 +223,26 @@ export function Hero() {
   );
 
   return (
-    <section ref={rootRef} className="relative overflow-hidden border-b border-[var(--border)]">
-      <div data-hero-video className="pointer-events-none absolute inset-0">
-        <div className="relative h-full w-full">
+    <section ref={rootRef} className="relative min-h-[32rem] overflow-hidden border-b border-[var(--border)] sm:min-h-[85svh]">
+      <div data-hero-video className="pointer-events-none absolute inset-0 z-0">
+        <div className="relative h-full min-h-[32rem] w-full sm:min-h-[85svh]">
           <HeroVideoBackground />
         </div>
       </div>
 
       <div
         data-hero-bg
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(105deg,rgba(244,248,253,0.94)_0%,rgba(232,241,251,0.88)_38%,rgba(255,255,255,0.72)_62%,rgba(10,37,64,0.28)_100%)]"
+        className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(105deg,rgba(244,248,253,0.78)_0%,rgba(232,241,251,0.48)_34%,rgba(255,255,255,0.14)_62%,transparent_100%)]"
         aria-hidden
       />
       <div
         data-hero-bg
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(165deg,rgba(10,37,64,0.42)_0%,rgba(29,86,230,0.18)_42%,rgba(255,255,255,0.06)_100%)] mix-blend-multiply"
+        className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(165deg,rgba(10,37,64,0.28)_0%,rgba(29,86,230,0.12)_42%,transparent_100%)]"
         aria-hidden
       />
       <div
         data-hero-bg
-        className="pointer-events-none absolute inset-0 opacity-[0.35] mix-blend-soft-light bg-[url('data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2260%22%20height=%2260%22%20viewBox=%220%200%2060%2060%22%3E%3Cg%20fill=%22none%22%20fill-rule=%22evenodd%22%3E%3Cg%20fill=%22%231d56e6%22%20fill-opacity=%220.06%22%3E%3Cpath%20d=%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"
+        className="pointer-events-none absolute inset-0 z-[1] opacity-20 mix-blend-soft-light bg-[url('data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2260%22%20height=%2260%22%20viewBox=%220%200%2060%2060%22%3E%3Cg%20fill=%22none%22%20fill-rule=%22evenodd%22%3E%3Cg%20fill=%22%231d56e6%22%20fill-opacity=%220.06%22%3E%3Cpath%20d=%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"
         aria-hidden
       />
 
@@ -264,10 +283,10 @@ export function Hero() {
             {heroSeoCopy.subtitleBold}
           </p>
 
-          <p data-hero-sub className="mt-4 max-w-[34rem] text-[17px] leading-relaxed text-[var(--body-muted)] md:text-[1.0625rem]">
+          <p data-hero-sub className="mt-4 max-w-[34rem] text-[17px] leading-relaxed text-[var(--heading)] md:text-[1.0625rem]">
             {heroSeoCopy.body}
           </p>
-          <p data-hero-sub className="mt-3 max-w-[34rem] text-[17px] leading-relaxed text-[var(--body-muted)] md:text-[1.0625rem]">
+          <p data-hero-sub className="mt-3 max-w-[34rem] text-[17px] leading-relaxed text-[var(--heading)] md:text-[1.0625rem]">
             {heroSeoCopy.bodySecondary}
           </p>
 

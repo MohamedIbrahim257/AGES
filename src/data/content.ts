@@ -104,6 +104,12 @@ export const destinationsSectionCopy = {
   bannerBody: "30+ countries — counselling aligned to local admissions and visa norms.",
 } as const;
 
+export const destinationsBannerVideo = {
+  /** Airport travel with luggage — study-abroad journey (Mixkit #4642) */
+  src: "https://assets.mixkit.co/videos/4642/4642-720.mp4",
+  posterSrc: "/images/student-journey-planning-cover.png",
+} as const;
+
 export type NewsItem = {
   image: string;
   category: string;
@@ -247,11 +253,11 @@ export const faqItems: FaqItem[] = [
   },
 ];
 
-/** Hero background — campus students (Mixkit, free for commercial use) */
+/** Hero background — students walking toward a university campus (Mixkit #4519) */
 export const heroVideo = {
-  src: "https://assets.mixkit.co/videos/preview/mixkit-group-of-students-walking-through-a-university-campus-1570-large.mp4",
-  posterSrc: "/images/journey-video-poster.jpg",
-  posterAlt: "Students on a university campus planning their study abroad journey",
+  src: "https://assets.mixkit.co/videos/4519/4519-720.mp4",
+  posterSrc: "/images/about-study-abroad.jpg",
+  posterAlt: "Students collaborating on their study abroad plans",
 } as const;
 
 export const heroSeoCopy = {

@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowRight, Globe, MapPin } from "lucide-react";
-import { type RegionFilter, destinations, destinationsSectionCopy } from "@/data/content";
+import { type RegionFilter, destinations, destinationsBannerVideo, destinationsSectionCopy } from "@/data/content";
 import { studyAbroadPages } from "@/data/studyAbroadPages";
+import { prefersReducedMotion } from "@/lib/motion";
 
 const regionFilters: { id: RegionFilter; label: string }[] = [
   { id: "all", label: "All" },
@@ -14,6 +15,65 @@ const regionFilters: { id: RegionFilter; label: string }[] = [
   { id: "Asia", label: "Asia" },
   { id: "Middle East", label: "Middle East" },
 ];
+
+function DestinationsBannerVideo() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [reduceMotion, setReduceMotion] = useState(false);
+
+  useEffect(() => {
+    const reduced = prefersReducedMotion();
+    setReduceMotion(reduced);
+    if (reduced) return;
+
+    const video = videoRef.current;
+    if (!video) return;
+
+    const playVideo = () => {
+      video.play().catch(() => {});
+    };
+
+    if (video.readyState >= 2) {
+      playVideo();
+    } else {
+      video.addEventListener("loadeddata", playVideo, { once: true });
+      video.addEventListener("canplay", playVideo, { once: true });
+    }
+
+    return () => {
+      video.removeEventListener("loadeddata", playVideo);
+      video.removeEventListener("canplay", playVideo);
+    };
+  }, []);
+
+  if (reduceMotion) {
+    return (
+      <Image
+        src={destinationsBannerVideo.posterSrc}
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover object-[center_35%] sm:object-[center_45%]"
+        aria-hidden
+      />
+    );
+  }
+
+  return (
+    <video
+      ref={videoRef}
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="auto"
+      poster={destinationsBannerVideo.posterSrc}
+      className="absolute inset-0 h-full w-full object-cover object-[center_35%] sm:object-[center_45%]"
+      aria-hidden
+    >
+      <source src={destinationsBannerVideo.src} type="video/mp4" />
+    </video>
+  );
+}
 
 export function Destinations() {
   const [filter, setFilter] = useState<RegionFilter>("all");
@@ -35,13 +95,7 @@ export function Destinations() {
         <div className="relative mx-auto mt-12 max-w-6xl overflow-hidden rounded-[1.75rem] shadow-[var(--shadow-card)] ring-1 ring-[rgba(6,21,38,0.06)]">
           <div className="relative sm:aspect-[2.4/1] md:aspect-[21/9] sm:min-h-[220px] md:min-h-[240px]">
             <div className="relative h-52 w-full sm:absolute sm:inset-0 sm:h-full">
-              <Image
-                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=82"
-                alt="Earth at night from space — representing worldwide study pathways"
-                fill
-                className="object-cover object-[center_35%] sm:object-[center_45%] brightness-[0.92] saturate-[1.05]"
-                sizes="100vw"
-              />
+              <DestinationsBannerVideo />
               <div
                 className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0a2540]/55 via-transparent to-transparent sm:from-black/35 sm:via-transparent"
                 aria-hidden
