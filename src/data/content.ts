@@ -256,7 +256,7 @@ export const faqItems: FaqItem[] = [
 /** Hero background — students walking toward a university campus (Mixkit #4519) */
 export const heroVideo = {
   src: "https://assets.mixkit.co/videos/4519/4519-720.mp4",
-  posterSrc: "/images/about-study-abroad.jpg",
+  posterSrc: "",
   posterAlt: "Students collaborating on their study abroad plans",
 } as const;
 
