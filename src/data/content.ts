@@ -104,6 +104,11 @@ export const destinationsSectionCopy = {
   bannerBody: "30+ countries — counselling aligned to local admissions and visa norms.",
 } as const;
 
+export const destinationsBannerImage = {
+  src: "/images/destinations-earth-night.jpg",
+  alt: "Earth at night from space — global study destinations and university network worldwide",
+} as const;
+
 export const destinationsBannerVideo = {
   /** Airport travel with luggage — study-abroad journey (Mixkit #4642) */
   src: "https://assets.mixkit.co/videos/4642/4642-720.mp4",
@@ -123,6 +128,10 @@ export const eventsNewsCopy = {
   title: "Events & News",
   lead: "Scholarship alerts, education fairs, and study destination insights.",
 } as const;
+
+/** Merit awards Fall intake — shared by Events & News card and Student Journey video cover */
+export const meritAwardsFallIntakeImage =
+  "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1600&q=85";
 
 export const newsItems: NewsItem[] = [
   {
@@ -178,8 +187,8 @@ export const studentJourneyCopy = {
 export const studentJourneyVideo = {
   driveFileId: "10_ElIn3SFD1AcxVLL3Kbpbnkno0CPvNS",
   embedUrl: "https://drive.google.com/file/d/10_ElIn3SFD1AcxVLL3Kbpbnkno0CPvNS/preview",
-  posterSrc: "/images/student-journey-planning-cover.png",
-  posterAlt: "Diverse students planning study abroad destinations together on a world map",
+  posterSrc: meritAwardsFallIntakeImage,
+  posterAlt: "Merit awards opening for Fall intake — institutional scholarships for study abroad",
 } as const;
 
 export type FaqItem = {
@@ -273,9 +282,9 @@ export const heroSeoCopy = {
 export const aboutSeoCopy = {
   eyebrow: "About us",
   title: "About Us",
-  /** Unsplash — https://unsplash.com/photos/four-people-watching-on-white-macbook-on-top-of-glass-top-table-vdXMSiX-n6M */
+  /** Unsplash — diverse students collaborating on study plans */
   imageSrc: "/images/about-study-abroad.jpg",
-  imageAlt: "Diverse international students collaborating on university planning with AGES Global Dubai",
+  imageAlt: "Diverse students collaborating on international university and study abroad plans",
   paragraphs: [
     "We are a leading international education agency committed to guiding students toward exceptional global academic opportunities. With extensive experience in international admissions and student support, we ensure a smooth, transparent process from consultation through university placement.",
     "As an ICEF-accredited education agency in Dubai, AGES Global provides structured and transparent guidance for students applying to universities across 30+ countries. Our approach is personalized, ethical, and focused on long-term academic and career success.",

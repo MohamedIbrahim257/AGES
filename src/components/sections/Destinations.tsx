@@ -2,11 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useMemo, useRef, useState } from "react";
-import { ArrowRight, Globe } from "lucide-react";
-import { type RegionFilter, destinations, destinationsBannerVideo, destinationsSectionCopy } from "@/data/content";
+import { useMemo, useState } from "react";
+import { ArrowRight, Globe, MapPin } from "lucide-react";
+import { type RegionFilter, destinations, destinationsBannerImage, destinationsSectionCopy } from "@/data/content";
 import { studyAbroadPages } from "@/data/studyAbroadPages";
-import { prefersReducedMotion } from "@/lib/motion";
 
 const regionFilters: { id: RegionFilter; label: string }[] = [
   { id: "all", label: "All" },
@@ -15,65 +14,6 @@ const regionFilters: { id: RegionFilter; label: string }[] = [
   { id: "Asia", label: "Asia" },
   { id: "Middle East", label: "Middle East" },
 ];
-
-function DestinationsBannerVideo() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [reduceMotion, setReduceMotion] = useState(false);
-
-  useEffect(() => {
-    const reduced = prefersReducedMotion();
-    setReduceMotion(reduced);
-    if (reduced) return;
-
-    const video = videoRef.current;
-    if (!video) return;
-
-    const playVideo = () => {
-      video.play().catch(() => {});
-    };
-
-    if (video.readyState >= 2) {
-      playVideo();
-    } else {
-      video.addEventListener("loadeddata", playVideo, { once: true });
-      video.addEventListener("canplay", playVideo, { once: true });
-    }
-
-    return () => {
-      video.removeEventListener("loadeddata", playVideo);
-      video.removeEventListener("canplay", playVideo);
-    };
-  }, []);
-
-  if (reduceMotion) {
-    return (
-      <Image
-        src={destinationsBannerVideo.posterSrc}
-        alt=""
-        fill
-        sizes="100vw"
-        className="object-cover object-[center_35%] sm:object-[center_45%]"
-        aria-hidden
-      />
-    );
-  }
-
-  return (
-    <video
-      ref={videoRef}
-      autoPlay
-      muted
-      loop
-      playsInline
-      preload="auto"
-      poster={destinationsBannerVideo.posterSrc}
-      className="absolute inset-0 h-full w-full object-cover object-[center_35%] sm:object-[center_45%]"
-      aria-hidden
-    >
-      <source src={destinationsBannerVideo.src} type="video/mp4" />
-    </video>
-  );
-}
 
 export function Destinations() {
   const [filter, setFilter] = useState<RegionFilter>("all");
@@ -90,31 +30,47 @@ export function Destinations() {
           <h2 className="section-heading !mt-0">{destinationsSectionCopy.title}</h2>
           <p className="section-lead">{destinationsSectionCopy.lead}</p>
         </div>
-      </div>
 
-      <div className="relative mt-12 aspect-[16/9] min-h-[260px] w-full sm:min-h-[300px] md:aspect-[21/9]">
-        <DestinationsBannerVideo />
-        <div
-          className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(7,23,39,0.72)_0%,rgba(10,37,64,0.45)_45%,rgba(10,37,64,0.55)_100%)]"
-          aria-hidden
-        />
+        {/* Banner */}
+        <div className="relative mx-auto mt-12 max-w-6xl overflow-hidden rounded-[1.75rem] shadow-[var(--shadow-card)] ring-1 ring-[rgba(6,21,38,0.06)]">
+          <div className="relative sm:aspect-[2.4/1] md:aspect-[21/9] sm:min-h-[220px] md:min-h-[240px]">
+            <div className="relative h-44 w-full sm:absolute sm:inset-0 sm:h-full">
+              <Image
+                src={destinationsBannerImage.src}
+                alt={destinationsBannerImage.alt}
+                fill
+                className="object-cover object-[center_45%] brightness-[0.92] saturate-[1.05]"
+                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1152px"
+              />
+              <div
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0a2540]/50 via-transparent to-transparent sm:from-black/35 sm:via-transparent"
+                aria-hidden
+              />
+              <div
+                className="pointer-events-none absolute inset-0 hidden bg-[linear-gradient(105deg,rgba(10,37,64,0.92)_0%,rgba(10,37,64,0.55)_42%,rgba(10,37,64,0.08)_72%,transparent_100%)] sm:block"
+                aria-hidden
+              />
+            </div>
 
-        <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center sm:px-6 md:px-8">
-          <p className="font-display text-xs font-semibold uppercase tracking-[0.14em] text-white/80">
-            {destinationsSectionCopy.bannerEyebrow}
-          </p>
-          <p className="mt-4 max-w-3xl font-display text-2xl font-semibold leading-snug tracking-tight text-white md:text-4xl md:leading-[1.12]">
-            {destinationsSectionCopy.bannerTitle}
-          </p>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/85 sm:text-base md:text-lg">
-            {destinationsSectionCopy.bannerBody}
-          </p>
+            <div className="relative flex flex-col justify-end bg-gradient-to-br from-[#0a2540] via-[#0a2139] to-[#071727] px-5 py-7 text-left sm:absolute sm:inset-0 sm:justify-center sm:bg-transparent sm:px-8 sm:py-10 sm:text-left md:px-12 lg:max-w-xl lg:pb-12">
+              <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/80">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/10 ring-1 ring-white/15 backdrop-blur-sm">
+                  <MapPin className="h-4 w-4 text-sky-200" aria-hidden />
+                </span>
+                {destinationsSectionCopy.bannerEyebrow}
+              </p>
+              <p className="mt-3 font-display text-xl font-semibold leading-snug tracking-tight text-white sm:mt-4 sm:text-3xl md:text-[2rem] md:leading-[1.15]">
+                {destinationsSectionCopy.bannerTitle}
+              </p>
+              <p className="mt-2 max-w-md text-sm leading-relaxed text-white/88 sm:mt-3 sm:text-[15px] md:text-base">
+                {destinationsSectionCopy.bannerBody}
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div className="section-padding !pt-12 md:!pt-14">
         {/* Region filter — segmented control */}
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto mt-12 max-w-6xl">
           <p className="mb-3 text-center font-display text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
             Region
           </p>
