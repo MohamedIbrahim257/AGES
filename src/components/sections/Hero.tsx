@@ -255,7 +255,7 @@ export function Hero() {
         <div className="mx-auto min-w-0 max-w-3xl">
           <p
             data-hero-badge
-            className="inline-flex items-center gap-3 text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-[var(--brand)]"
+            className="inline-flex items-center gap-3 text-[1rem] font-semibold uppercase tracking-[0.16em] text-[var(--brand)]"
           >
             <a
               href={SITE.icef.profileUrl}
@@ -267,19 +267,19 @@ export function Hero() {
               <Image
                 src={SITE.icef.badgeSrc}
                 alt={SITE.icef.badgeAlt}
-                width={104}
-                height={152}
-                className="h-24 w-auto object-contain sm:h-28"
+                width={175}
+                height={210}
+                className="h-28 w-auto object-contain sm:h-32"
               />
             </a>
             {heroSeoCopy.badgeLabel}
           </p>
 
-          <h1 data-hero-line className="font-display mt-7 text-[2.35rem] font-semibold leading-[1.08] tracking-tight text-[var(--heading)] sm:text-5xl lg:text-[3.2rem]">
+          <h1 data-hero-line className="font-display mt-7 text-[2.35rem] font-semibold leading-[1.08] tracking-tight text-[var(--brand)] sm:text-5xl lg:text-[3.2rem]">
             {heroSeoCopy.titlePrimary}
           </h1>
 
-          <p data-hero-sub className="mt-6 text-lg font-semibold leading-snug text-[var(--heading)] sm:text-xl">
+          <p data-hero-sub className="mt-6 text-lg font-semibold leading-snug text-[var(--brand)] sm:text-xl">
             {heroSeoCopy.subtitleBold}
           </p>
 

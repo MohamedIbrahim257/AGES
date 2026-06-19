@@ -13,6 +13,7 @@ const regionFilters: { id: RegionFilter; label: string }[] = [
   { id: "Europe", label: "Europe" },
   { id: "Asia", label: "Asia" },
   { id: "Middle East", label: "Middle East" },
+  { id: "Oceania", label: "Oceania" },
 ];
 
 export function Destinations() {

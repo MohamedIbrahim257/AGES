@@ -2,7 +2,7 @@
 export const ACCENT = "#2563eb";
 export const NAVY_DEEP = "#1a2b4b";
 
-export type RegionFilter = "all" | "Americas" | "Europe" | "Asia" | "Middle East";
+export type RegionFilter = "all" | "Americas" | "Europe" | "Asia" | "Middle East" | "Oceania";
 
 export const whyCards = [
   {
@@ -82,15 +82,19 @@ export const destinations: Destination[] = [
   { country: "UK", benefit: "Study in UK · Historic institutions & graduate pathways", region: "Europe", flag: "🇬🇧" },
   { country: "Canada", benefit: "Study in Canada · PGWP-friendly routes", region: "Americas", flag: "🇨🇦" },
   { country: "Germany", benefit: "Study in Germany · STEM & English-taught options", region: "Europe", flag: "🇩🇪" },
+  { country: "Austria", benefit: "Study in Austria · Central European universities & research hubs", region: "Europe", flag: "🇦🇹" },
   { country: "Spain", benefit: "Study in Spain · Vibrant student cities", region: "Europe", flag: "🇪🇸" },
   { country: "Italy", benefit: "Study in Italy · Arts, design & business hubs", region: "Europe", flag: "🇮🇹" },
+  { country: "Greece", benefit: "Study in Greece · EU pathways & Mediterranean campuses", region: "Europe", flag: "🇬🇷" },
   { country: "Cyprus", benefit: "Study in Cyprus · EU pathways & Mediterranean lifestyle", region: "Europe", flag: "🇨🇾" },
   { country: "Hungary", benefit: "Study in Hungary · Accessible EU education", region: "Europe", flag: "🇭🇺" },
   { country: "Poland", benefit: "Study in Poland · Central European hubs", region: "Europe", flag: "🇵🇱" },
   { country: "Romania", benefit: "Study in Romania · Growing English programmes", region: "Europe", flag: "🇷🇴" },
   { country: "South Korea", benefit: "Study in South Korea · Innovation-led campuses", region: "Asia", flag: "🇰🇷" },
+  { country: "Australia", benefit: "Study in Australia · World-ranked universities & post-study pathways", region: "Oceania", flag: "🇦🇺" },
   { country: "Turkey", benefit: "Study in Turkey · Bridge between continents", region: "Middle East", flag: "🇹🇷" },
   { country: "United Arab Emirates", benefit: "Study in UAE · Regional excellence hubs", region: "Middle East", flag: "🇦🇪" },
+  { country: "Egypt", benefit: "Study in Egypt · Leading regional universities & cultural hub", region: "Middle East", flag: "🇪🇬" },
   { country: "Lithuania", benefit: "Study in Lithuania · Affordable EU degrees", region: "Europe", flag: "🇱🇹" },
 ];
 
@@ -274,9 +278,9 @@ export const heroSeoCopy = {
   titlePrimary: "Welcome to AGES Global",
   subtitleBold: "Your trusted agency for international study opportunities",
   body:
-    "AGES Global helps students secure university admissions, student visas, and scholarships across the UK, USA, Canada, Germany, and Europe — with expert, ethical guidance at every step.",
+    "",
   bodySecondary:
-    "From university shortlisting to arrival overseas, we manage your full study abroad journey.",
+    "",
 } as const;
 
 export const aboutSeoCopy = {
