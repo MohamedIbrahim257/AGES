@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { BookConsultationButton } from "@/components/BookConsultationButton";
@@ -17,43 +17,20 @@ const nav = [
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [visible, setVisible] = useState(true);
-  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const onScroll = () => {
-      const y = window.scrollY;
-      setScrolled(y > 12);
-
-      if (open) {
-        setVisible(true);
-        lastScrollY.current = y;
-        return;
-      }
-
-      const delta = y - lastScrollY.current;
-
-      if (y <= 80) {
-        setVisible(true);
-      } else if (delta > 8) {
-        setVisible(false);
-      } else if (delta < -8) {
-        setVisible(true);
-      }
-
-      lastScrollY.current = y;
+      setScrolled(window.scrollY > 12);
     };
 
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, [open]);
+  }, []);
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 overflow-visible transition-[transform,background-color,box-shadow,border-color] duration-300 ${
-        visible || open ? "translate-y-0" : "-translate-y-full"
-      } ${
+      className={`fixed top-0 left-0 right-0 z-50 overflow-visible transition-[background-color,box-shadow,border-color] duration-300 ${
         scrolled
           ? "border-b border-[rgba(6,21,38,0.08)] bg-[rgba(255,255,255,0.78)] shadow-[0_8px_30px_-12px_rgba(6,21,38,0.1)] backdrop-blur-xl"
           : "border-b border-transparent bg-transparent"
