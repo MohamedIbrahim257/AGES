@@ -119,12 +119,42 @@ export const destinationsBannerVideo = {
   posterSrc: "/images/student-journey-planning-cover.png",
 } as const;
 
+export type NewsChecklistIcon =
+  | "passport"
+  | "acceptance"
+  | "finances"
+  | "insurance"
+  | "medical"
+  | "clearance"
+  | "application"
+  | "interview"
+  | "incomplete-docs"
+  | "outdated"
+  | "inconsistent"
+  | "incorrect-forms"
+  | "late"
+  | "ignoring-guidelines"
+  | "home-ties"
+  | "generic-statements";
+
+export type NewsChecklistItem = {
+  label: string;
+  icon: NewsChecklistIcon;
+};
+
 export type NewsItem = {
+  slug: string;
   image: string;
+  imageAlt?: string;
   category: string;
   date: string;
   title: string;
   excerpt: string;
+  /** Full article intro — when set, "Read more" links to /news/[slug] */
+  intro?: string;
+  /** Label for numbered checklist rows — defaults to "Step" */
+  checklistLabel?: string;
+  checklistItems?: NewsChecklistItem[];
 };
 
 export const eventsNewsCopy = {
@@ -139,6 +169,54 @@ export const meritAwardsFallIntakeImage =
 
 export const newsItems: NewsItem[] = [
   {
+    slug: "visa-application-mistakes",
+    image: "/images/visa-application-mistakes.jpg",
+    imageAlt: "Students reviewing visa application documents — common mistakes to avoid",
+    category: "Study Destination Insights",
+    date: "June 2026",
+    title: "Top 10 Mistakes Students Make During Visa Applications",
+    excerpt:
+      "Avoidable errors that delay or derail student visa applications — from incomplete files to weak interview preparation.",
+    intro:
+      "Every year, thousands of student visa applications face delays or refusals due to avoidable mistakes.",
+    checklistLabel: "Mistake",
+    checklistItems: [
+      { label: "Submitting Incomplete Documentation", icon: "incomplete-docs" },
+      { label: "Providing Insufficient Financial Evidence", icon: "finances" },
+      { label: "Using Outdated Documents", icon: "outdated" },
+      { label: "Inconsistent Information", icon: "inconsistent" },
+      { label: "Weak Visa Interview Performance", icon: "interview" },
+      { label: "Incorrectly Completed Application Forms", icon: "incorrect-forms" },
+      { label: "Applying Too Late", icon: "late" },
+      { label: "Ignoring Embassy-Specific Requirements", icon: "ignoring-guidelines" },
+      { label: "Not Demonstrating Ties to Home Country", icon: "home-ties" },
+      { label: "Submitting Generic or Unsupported Statements", icon: "generic-statements" },
+    ],
+  },
+  {
+    slug: "student-visa-checklist",
+    image: "/images/student-visa-checklist.jpg",
+    imageAlt: "Open passport with visa stamps — student visa application checklist",
+    category: "Study Destination Insights",
+    date: "June 2026",
+    title: "Student Visa Checklist: Everything You Need Before Applying",
+    excerpt:
+      "Key documents and preparation steps for a complete student visa application — from passport to interview readiness.",
+    intro:
+      "Applying for a student visa is one of the most important steps in your study abroad journey. Even after receiving admission from your chosen university, your plans can be delayed or jeopardized if your visa application is incomplete or incorrectly prepared.",
+    checklistItems: [
+      { label: "Valid Passport", icon: "passport" },
+      { label: "University Acceptance Letter", icon: "acceptance" },
+      { label: "Proof of Financial Support", icon: "finances" },
+      { label: "Health Insurance Coverage", icon: "insurance" },
+      { label: "Medical Examination and Health Certificates", icon: "medical" },
+      { label: "Police Clearance or Criminal Record Certificate", icon: "clearance" },
+      { label: "Completed Visa Application Form", icon: "application" },
+      { label: "Visa Interview Preparation", icon: "interview" },
+    ],
+  },
+  {
+    slug: "merit-awards-fall-intake",
     image:
       "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=800&q=80",
     category: "Scholarship Alert",
@@ -147,6 +225,7 @@ export const newsItems: NewsItem[] = [
     excerpt: "Key deadlines for institutional scholarships across UK and North American partners.",
   },
   {
+    slug: "meet-universities-dubai",
     image:
       "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80",
     category: "Education Fair",
@@ -154,15 +233,13 @@ export const newsItems: NewsItem[] = [
     title: "Meet universities in Dubai",
     excerpt: "Representatives from partner institutions — programme briefings and on-site counselling slots.",
   },
-  {
-    image:
-      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80",
-    category: "Study Destination Insights",
-    date: "February 2026",
-    title: "Visa readiness checklist",
-    excerpt: "Documentation timelines and embassy preparation tips for popular study destinations.",
-  },
 ];
+
+export const newsItemSlugs = newsItems.map((item) => item.slug);
+
+export function getNewsItem(slug: string): NewsItem | undefined {
+  return newsItems.find((item) => item.slug === slug);
+}
 
 export const trustIndicators = [
   { label: "University Partners", value: "150+" },
