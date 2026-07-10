@@ -267,7 +267,7 @@ export const studentJourneyCopy = {
 /** Google Drive file — share: https://drive.google.com/file/d/10_ElIn3SFD1AcxVLL3Kbpbnkno0CPvNS/view */
 export const studentJourneyVideo = {
   driveFileId: "10_ElIn3SFD1AcxVLL3Kbpbnkno0CPvNS",
-  embedUrl: "https://drive.google.com/file/d/10_ElIn3SFD1AcxVLL3Kbpbnkno0CPvNS/preview",
+  embedUrl: "/videos/video5956351046564449877.mp4",
   posterSrc: meritAwardsFallIntakeImage,
   posterAlt: "Merit awards opening for Fall intake — institutional scholarships for study abroad",
 } as const;

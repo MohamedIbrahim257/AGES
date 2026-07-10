@@ -67,7 +67,7 @@ export function StudentJourney() {
         </ol>
 
         <div className="mx-auto mt-14 max-w-4xl">
-          <div className="overflow-hidden rounded-[1.75rem] bg-[var(--surface-soft)] shadow-[var(--shadow-card)] ring-1 ring-[rgba(6,21,38,0.06)]">
+          <div className="overflow-hidden rounded-[1rem] bg-[var(--surface-soft)] shadow-[var(--shadow-card)] ring-1 ring-[rgba(6,21,38,0.06)]">
             <StudentJourneyVideo />
           </div>
         </div>
