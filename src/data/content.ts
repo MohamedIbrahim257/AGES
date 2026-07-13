@@ -139,6 +139,7 @@ export type NewsChecklistIcon =
 
 export type NewsChecklistItem = {
   label: string;
+  description?: string;
   icon: NewsChecklistIcon;
 };
 
@@ -155,6 +156,19 @@ export type NewsItem = {
   /** Label for numbered checklist rows — defaults to "Step" */
   checklistLabel?: string;
   checklistItems?: NewsChecklistItem[];
+  /** Optional photo gallery — empty images array shows placeholders until photos are added */
+  gallery?: {
+    title: string;
+    images?: string[];
+    imageAlts?: string[];
+  };
+  /** Optional closing call-to-action block */
+  ctaSection?: {
+    title: string;
+    body: string;
+    footnote?: string;
+    ctaLabel?: string;
+  };
 };
 
 export const eventsNewsCopy = {
@@ -163,8 +177,8 @@ export const eventsNewsCopy = {
   lead: "Scholarship alerts, education fairs, and study destination insights.",
 } as const;
 
-/** Merit awards Fall intake — shared by Events & News card and Student Journey video cover */
-export const meritAwardsFallIntakeImage =
+/** Scholarship funding — shared by Events & News card and Student Journey video cover */
+export const scholarshipFundingImage =
   "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1600&q=85";
 
 export const newsItems: NewsItem[] = [
@@ -216,22 +230,103 @@ export const newsItems: NewsItem[] = [
     ],
   },
   {
-    slug: "merit-awards-fall-intake",
+    slug: "scholarship-funding-opportunities",
     image:
       "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "International students exploring scholarship and funding opportunities for study abroad",
     category: "Scholarship Alert",
     date: "April 2026",
-    title: "Merit awards opening for Fall intake",
-    excerpt: "Key deadlines for institutional scholarships across UK and North American partners.",
+    title: "Scholarship Alert: Funding Opportunities for International Students",
+    excerpt:
+      "Key scholarship types, eligibility criteria, and application strategies to fund your study abroad journey.",
+    intro:
+      "Studying abroad can be a life-changing experience, but the costs can be challenging. Scholarships help students reduce financial pressure and make international education more accessible. Here are the key things every student should know when searching and applying for scholarships.",
+    checklistLabel: "Topic",
+    checklistItems: [
+      {
+        label: "Scholarship Types",
+        description:
+          "Scholarships may be merit-based, need-based, sports-related, or awarded for leadership and community involvement. Understanding the different types helps you find opportunities that match your profile.",
+        icon: "acceptance",
+      },
+      {
+        label: "Eligibility Requirements",
+        description:
+          "Each scholarship has specific criteria, including academic performance, nationality, study program, or extracurricular achievements. Always review the requirements carefully before applying.",
+        icon: "clearance",
+      },
+      {
+        label: "Required Documents",
+        description:
+          "Most scholarship applications require academic transcripts, recommendation letters, a personal statement, proof of admission, and language proficiency test results.",
+        icon: "passport",
+      },
+      {
+        label: "Application Process",
+        description:
+          "Follow the instructions provided by the scholarship provider. Submit all documents before the deadline and ensure your application is complete.",
+        icon: "application",
+      },
+      {
+        label: "Personal Statement Tips",
+        description:
+          "Your personal statement should clearly explain your academic goals, career aspirations, and why you deserve financial support.",
+        icon: "generic-statements",
+      },
+      {
+        label: "Common Mistakes",
+        description:
+          "Many students miss deadlines, submit incomplete documents, or fail to tailor their applications to scholarship requirements.",
+        icon: "incorrect-forms",
+      },
+      {
+        label: "Important Deadlines",
+        description:
+          "Scholarship deadlines vary throughout the year. Create a timeline and apply early to avoid missing opportunities.",
+        icon: "late",
+      },
+      {
+        label: "Funding Opportunities",
+        description:
+          "Explore government scholarships, university-funded awards, private foundations, and international organizations offering financial assistance.",
+        icon: "finances",
+      },
+      {
+        label: "Success Strategies",
+        description:
+          "Maintain strong academic results, participate in extracurricular activities, and prepare high-quality application materials to improve your chances.",
+        icon: "interview",
+      },
+      {
+        label: "Final Checklist",
+        description:
+          "Before submitting, review all documents, confirm eligibility, check deadlines, and ensure every requirement has been completed.",
+        icon: "incomplete-docs",
+      },
+    ],
   },
   {
-    slug: "meet-universities-dubai",
+    slug: "education-fairs-why-attend",
     image:
       "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Students and university representatives at an education fair",
     category: "Education Fair",
     date: "March 2026",
-    title: "Meet universities in Dubai",
-    excerpt: "Representatives from partner institutions — programme briefings and on-site counselling slots.",
+    title: "Education Fairs – Why Students Should Attend?",
+    excerpt:
+      "Meet top universities, explore programmes, and discover scholarship opportunities — all with expert guidance at one event.",
+    intro:
+      "Our fairs bring students closer to their dream universities. From personalized guidance to exclusive scholarship opportunities.",
+    gallery: {
+      title: "Moments from Our Education Fairs",
+      images: [],
+    },
+    ctaSection: {
+      title: "Join Our Next Education Fair",
+      body: "Meet top universities, explore programs, discover scholarship opportunities, and receive expert guidance—all at one event.",
+      footnote: "Register today and take the next step toward your international education journey.",
+      ctaLabel: "Register today",
+    },
   },
 ];
 
@@ -268,8 +363,8 @@ export const studentJourneyCopy = {
 export const studentJourneyVideo = {
   driveFileId: "10_ElIn3SFD1AcxVLL3Kbpbnkno0CPvNS",
   embedUrl: "/videos/video5956351046564449877.mp4",
-  posterSrc: meritAwardsFallIntakeImage,
-  posterAlt: "Merit awards opening for Fall intake — institutional scholarships for study abroad",
+  posterSrc: scholarshipFundingImage,
+  posterAlt: "Scholarship funding opportunities for international students studying abroad",
 } as const;
 
 export type FaqItem = {

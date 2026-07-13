@@ -78,6 +78,9 @@ export function NewsArticleChecklist({ items, itemLabel = "Step" }: Props) {
                 {itemLabel} {index + 1}
               </span>
               <p className="mt-0.5 text-base font-semibold leading-snug text-[var(--heading)]">{item.label}</p>
+              {item.description ? (
+                <p className="mt-1.5 text-sm leading-relaxed text-[var(--body-muted)]">{item.description}</p>
+              ) : null}
             </div>
           </li>
         );

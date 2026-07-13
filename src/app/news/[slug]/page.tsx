@@ -8,6 +8,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { NewsArticleChecklist } from "@/components/news/NewsArticleChecklist";
+import { NewsArticleGallery } from "@/components/news/NewsArticleGallery";
 import { getNewsItem, newsItemSlugs } from "@/data/content";
 import { SITE } from "@/lib/site";
 
@@ -96,9 +97,40 @@ export default async function NewsArticlePage({ params }: Props) {
             <NewsArticleChecklist items={item.checklistItems} itemLabel={item.checklistLabel} />
           )}
 
+          {item.gallery ? (
+            <NewsArticleGallery
+              title={item.gallery.title}
+              images={item.gallery.images}
+              imageAlts={item.gallery.imageAlts}
+            />
+          ) : null}
+
+          {item.ctaSection ? (
+            <section
+              className="surface-card-lg mt-10 rounded-2xl p-6 ring-1 ring-[rgba(6,21,38,0.06)] sm:p-8"
+              aria-labelledby="news-cta-heading"
+            >
+              <h2
+                id="news-cta-heading"
+                className="font-display text-2xl font-semibold tracking-tight text-[var(--heading)]"
+              >
+                {item.ctaSection.title}
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-[var(--body-muted)]">{item.ctaSection.body}</p>
+              {item.ctaSection.footnote ? (
+                <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">{item.ctaSection.footnote}</p>
+              ) : null}
+              {item.ctaSection.ctaLabel ? (
+                <BookConsultationButton className="focus-ring btn-primary-premium mt-6 inline-flex justify-center rounded-xl px-8 py-3.5 text-center text-sm font-semibold">
+                  {item.ctaSection.ctaLabel}
+                </BookConsultationButton>
+              ) : null}
+            </section>
+          ) : null}
+
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <BookConsultationButton className="focus-ring btn-primary-premium inline-flex justify-center rounded-xl px-8 py-3.5 text-center text-sm font-semibold">
-              Get visa guidance
+              Book a consultation
             </BookConsultationButton>
             <Link
               href="/#events"
@@ -109,8 +141,8 @@ export default async function NewsArticlePage({ params }: Props) {
           </div>
 
           <p className="mt-10 text-sm leading-relaxed text-[var(--muted)]">
-            AGES Global Dubai provides step-by-step student visa assistance — documentation review, application
-            preparation, and embassy readiness support for students studying abroad from the UAE.
+            AGES Global Dubai supports students with university applications, scholarships, visas, and pre-departure
+            guidance for study abroad from the UAE.
           </p>
         </div>
       </article>
