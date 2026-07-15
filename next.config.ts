@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
         hostname: "icef-api-production.s3.eu-central-1.amazonaws.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        pathname: "/**",
+      },
     ],
   },
 };

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { BookConsultationButton } from "@/components/BookConsultationButton";
+import { heroSeoCopy } from "@/data/content";
 import { SITE } from "@/lib/site";
 
 const nav = [
@@ -52,7 +53,29 @@ export function Header() {
             />
           </span>
         </Link>
-        <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
+
+        <a
+          href={SITE.icef.profileUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Verify ICEF accreditation on ICEF.com"
+          className={`focus-ring hidden shrink-0 items-center gap-3 overflow-hidden rounded-lg transition-all duration-300 md:flex ${
+            scrolled ? "max-w-[24rem] opacity-100 lg:max-w-[28rem]" : "pointer-events-none max-w-0 opacity-0"
+          }`}
+        >
+          <Image
+            src={SITE.icef.badgeSrc}
+            alt={SITE.icef.badgeAlt}
+            width={175}
+            height={210}
+            className="h-14 w-auto shrink-0 object-contain lg:h-[4.75rem]"
+          />
+          <span className="min-w-0 text-[11px] font-semibold uppercase leading-tight tracking-[0.12em] text-[var(--heading)] lg:text-xs lg:tracking-[0.14em]">
+            {heroSeoCopy.badgeLabel}
+          </span>
+        </a>
+
+        <nav className="hidden items-center gap-1 md:ml-auto md:flex lg:ml-0" aria-label="Primary">
           {nav.map((item) => (
             <a
               key={item.href}
@@ -68,7 +91,26 @@ export function Header() {
             Book consultation
           </BookConsultationButton>
         </div>
-        <button
+        <div className="flex items-center gap-2 md:contents">
+          <a
+            href={SITE.icef.profileUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Verify ICEF accreditation on ICEF.com"
+            className={`focus-ring shrink-0 rounded-sm transition-opacity duration-300 md:hidden ${
+              scrolled ? "opacity-100" : "pointer-events-none opacity-0"
+            }`}
+          >
+            <Image
+              src={SITE.icef.badgeSrc}
+              alt=""
+              width={175}
+              height={210}
+              className="h-12 w-auto object-contain"
+              aria-hidden
+            />
+          </a>
+          <button
           type="button"
           className="focus-ring inline-flex rounded-lg p-2 text-[var(--heading)] md:hidden"
           aria-expanded={open}
@@ -83,7 +125,8 @@ export function Header() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             )}
           </svg>
-        </button>
+          </button>
+        </div>
       </div>
       {open ? (
         <div
