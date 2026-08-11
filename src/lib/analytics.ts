@@ -9,3 +9,4 @@ export const ANALYTICS = {
 export const hasAnalytics = Boolean(
   ANALYTICS.ga4 || ANALYTICS.clarity || ANALYTICS.tiktok || ANALYTICS.meta,
 );
+
