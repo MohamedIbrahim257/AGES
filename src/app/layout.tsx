@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Outfit, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
-import { SITE } from "@/lib/site";
+import { Analytics } from "@/components/Analytics";
 import { Providers } from "@/components/Providers";
+import { SITE } from "@/lib/site";
 
 const outfit = Outfit({
   variable: "--font-display",
@@ -71,6 +72,7 @@ export default function RootLayout({
     <html lang="en" className={`${outfit.variable} ${sourceSans.variable} scroll-smooth`}>
       <body className="min-h-screen flex flex-col antialiased bg-[var(--background)] text-[var(--foreground)] font-body">
         <Providers>{children}</Providers>
+        <Analytics />
       </body>
     </html>
   );
